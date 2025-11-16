@@ -1,0 +1,158 @@
+\documentclass[a4paper]{article}
+% Set target color model to RGB
+\usepackage[inner=2.0cm,outer=2.0cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage[rgb]{xcolor}
+\usepackage{verbatim}
+\usepackage{subcaption}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,tikz,amssymb}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=blue]{hyperref}
+\hypersetup{
+    linkcolor=black
+}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{rotating}
+\usepackage[shortlabels]{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\hypersetup{%
+pdfauthor={Sebastian Käslin, Kaushik Raghupathruni},%
+pdftitle={MSGAI - Project Proposal: Adaptive AI Podcast Clip Generator},%
+pdfkeywords={Generative AI, Performance Modeling, Queueing Theory, Adaptive Inference, Model Switching},%
+pdfcreator={PDFLaTeX},%
+pdfproducer={PDFLaTeX},%
+}
+
+\begin{document}
+
+\title{\textbf{Adaptive AI Podcast Clip Generator - Wizard of POdz}\\
+\large Modeling and Scaling of Generative AI Systems – Project Proposal}
+\author{Sebastian Käslin \and Kaushik Raghupathruni}
+\date{\today}
+\maketitle
+
+\tableofcontents
+\newpage
+
+
+\section{Problem Description}
+
+The problem we want to work on is a common one when designing a generative AI system, 
+i.e., the trade-off between output quality and inference latency. In particular, the \textbf{tail latency (P99)}—the 99th percentile of response times—often becomes a critical factor, when considering high-load conditions and aiming at ensuring a positive overall user experience. Our aim is to make the user experience the best possible, however, resources costs need to be also taken into consideration.
+
+Our proposition is an \textbf{Adaptive AI Podcast Clip Generator - Wizard of POdz}, that as the name suggests, let you enter in a fantasy world where you can generate podcast audio clips on different topics and with special guests. The system generates the audio
+clips through two main stages:
+
+\begin{enumerate}
+    \item \textbf{Script Generation}: via a large language models (LLMs)
+    \item \textbf{Text-to-Speech (TTS)}: via neural speech synthesis models
+\end{enumerate}
+
+To reduce latency spikes, we will implement \textbf{adaptive model switching} based on real-time system load. The idea is that during light traffic, a high-quality combination of models will be used; under heavy load, a faster, lower-latency models combination will take over. The main goal is to minimize P99 latency while maintaining a good output quality in the generated content.
+
+
+\section{Experiment Setup and Pipeline Design}
+
+The experimental system consists of a two-stage pipeline deployed on a GPU-enabled platform (PyTorch + HuggingFace Transformers).
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Stage} & \textbf{High-Quality Model (Baseline)} & \textbf{Low-Latency Model (Adaptive)} \\ \midrule
+Script Generation (LLM) & Llama 3.1 8B Instruct (4-bit) \cite{huggingface_llama31_8b} & Gemma 2 2B Instruct \cite{huggingface_gemma2_2b_it} \\
+Text-to-Speech (TTS) & Coqui XTTS v2 (emotional) \cite{coqui_xtts_v2} & Microsoft SpeechT5 (fast) \cite{huggingface_speecht5_tts} \\
+\bottomrule
+\end{tabular}
+\caption{Models used in the two-stage inference pipeline.}
+\label{table1}
+\end{table}
+
+The models in Table \ref{table1} represent examples of possible models that will be used, experiments will take place in order to empirically compare models' quality and latency.
+
+\textbf{Adaptive Model Switching:}  
+Requests arrive into a central queue shared by the two stages. The system dynamically chooses between the high-quality and low-latency models for \textit{both} LLM and TTS components based on real-time load measurements. The goal is to maintain service responsiveness (low tail latency) while preserving quality in the generated content.
+
+\paragraph{Per-Stage Thresholds.} 
+
+Two independent queue thresholds are defined:
+\begin{itemize}
+    \item $N_{\text{LLM}}$: Threshold controlling the switch between Llama~3.1~(8B) and Gemma~2~(2B).
+    \item $N_{\text{TTS}}$: Threshold controlling the switch between Coqui~XTTS and SpeechT5.
+\end{itemize}
+When the queue length or GPU utilization of a stage exceeds its threshold, the corresponding stage switches to the fast model; once the queue decreases below a lower bound (hysteresis), it reverts to the high-quality model. This prevents oscillations and ensures stability under variable load.
+
+\paragraph{Joint Model Pairing.}
+Because the two stages are sequential, the output rate of the LLM directly determines the arrival rate for the TTS stage. To capture this dependency, a joint decision policy is also explored. The system can select one of four possible model combinations:
+\[
+\{(HQ_{\text{LLM}},HQ_{\text{TTS}}), (HQ_{\text{LLM}},Fast_{\text{TTS}}), (Fast_{\text{LLM}},HQ_{\text{TTS}}), (Fast_{\text{LLM}},Fast_{\text{TTS}})\}.
+\]
+and each combination has different latency, cost, and quality characteristics.
+
+\section{Exploration of Experiments}
+
+We will vary several input parameters and collect performance metrics for each configuration. The experiments are designed to evaluate how adaptive switching across both stages (LLM and TTS) impacts overall latency, throughput, and quality under different load conditions. We will consider a dataset of different unique podcast topics to evaluate the system.
+
+\subsection*{Input Parameters}
+\begin{itemize}[nosep]
+    \item \textbf{LLM settings:} Model type (\textit{Llama~3~8B} vs. \textit{Gemma~2~2B}), temperature, and maximum tokens.
+    \item \textbf{TTS settings:} Model type (\textit{Coqui~XTTS} vs. \textit{SpeechT5}), voice style, and inference steps.
+    \item \textbf{Batch size:} 1 vs. 4 concurrent requests.
+    \item \textbf{Load:} Low (1 req/min), medium (4 req/min), high (8 req/min).
+    \item \textbf{Per-stage thresholds:}
+    \begin{itemize}[nosep]
+        \item $N_{\text{LLM}} \in \{2, 5, 10\}$
+        \item $N_{\text{TTS}} \in \{2, 5, 10\}$
+    \end{itemize}
+    \item \textbf{Switching policy:} 
+    \begin{itemize}[nosep]
+        \item Static (always high-quality)
+        \item Per-stage adaptive (independent thresholds)
+        \item Joint adaptive (global decision on model pair)
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Performance Metrics}
+\begin{itemize}[nosep]
+    \item \textbf{End-to-End Latency:} P50, P95, and P99 latency measured across both stages.
+    \item \textbf{Per-Stage Latency:} Average and tail latency for LLM and TTS individually.
+    \item \textbf{Throughput:} Number of requests successfully processed per minute.
+    \item \textbf{GPU Utilization:} Real-time memory and compute usage for each stage.
+    \item \textbf{Switching Behavior:} Frequency of model switches and hysteresis stability.
+    \item \textbf{Quality Metrics:}
+        \begin{itemize}
+            \item \textbf{LLM-as-a-Judge Score:} 1–10 coherence and creativity rating by an independent LLM evaluator.
+            \item \textbf{Audio Quality (MOS):} Human-rated mean opinion score (1–5 scale).
+        \end{itemize}
+    \item \textbf{Composite Score:} A weighted objective function combining latency, quality, and cost:
+    \[
+    C = \alpha \cdot \text{P99}_{\text{lat}} + \beta \cdot (1 - Q_{\text{score}}) + \gamma \cdot \text{Cost},
+    \]
+    where $\alpha, \beta, \gamma$ are tunable parameters balancing responsiveness, perceptual quality, and resource efficiency.
+\end{itemize}
+
+\section{Predictive Analysis and Modeling}
+
+This part of the project focuses on developing a predictive model to estimate end-to-end latency and throughput under varying system loads and model configurations. The objective is to bridge the gap between analytical predictions and empirical measurements, allowing the definition of adaptation policies.
+
+% \subsection*{Modeling Approach}
+
+% \begin{itemize}[nosep]
+%     \item \textbf{Queueing Model:} The two-stage pipeline (LLM → TTS) is modeled as a tandem queueing system, where each stage behaves approximately as an M/M/1 or M/G/1 queue with service rate $\mu_i$ and arrival rate $\lambda$. Analytical estimates of mean response time $E[W]$ and tail latency ($P95$, $P99$) will be derived using classical results from queueing theory \cite{harchol2020performance}.
+%     \item \textbf{Empirical Calibration:} Model parameters ($\mu_1$, $\mu_2$, and service-time variance) will be obtained from measured inference traces. The predicted latency distribution will then be compared against empirical observations.
+%     \item \textbf{Regression Augmentation:} To improve prediction accuracy beyond analytical models, a lightweight regression or tree-based model will be trained to estimate latency as a function of queue length, model type, and GPU utilization.
+%     \item \textbf{Policy Evaluation:} The predictive model will be used to simulate the impact of different threshold values ($N_{\text{LLM}}, N_{\text{TTS}}$) and switching policies on expected latency and throughput.
+% \end{itemize}
+
+\subsection*{Expected Outcome}
+The outcome of this analysis is a calibrated latency model that can accurately predict tail latency under varying load conditions and guide dynamic switching decisions in real time.
+
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
