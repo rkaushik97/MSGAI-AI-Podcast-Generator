@@ -1,6 +1,7 @@
 models/
 datasets/
 tts_results/
+.jupyter/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

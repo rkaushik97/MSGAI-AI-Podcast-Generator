@@ -1,0 +1,7 @@
+name: msgai
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - libsndfile=1.0.31
+prefix: /home/kaeslin/miniconda3/envs/msgai
