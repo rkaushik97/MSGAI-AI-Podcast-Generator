@@ -1,0 +1,4 @@
+"1. Switch from 2 x 2 to LLM [Standard] + TTS [HQ / Fast] switching. 
+2. Queue Logic as [M/G/1] Combined Service -> Treat Script generation + Audio generation as 1 job.
+3. Quality evaluation metric only for TTS, Performance evaluation metrics for both. 
+4. No batching for LLM. Batching could be used for TTS, and based on system load."
