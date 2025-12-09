@@ -1,0 +1,32 @@
+[
+    {
+        "topic": "The Simulation Theory: Are we living in a video game?",
+        "relevance_score": 5,
+        "coherence_score": 5,
+        "script_file": "the_simulation_theory_are_we_l_script.md",
+        "audio_file": "the_simulation_theory_are_we_l_HM_GM.wav",
+        "host_gender": "MALE",
+        "guest_gender": "MALE",
+        "processing_time_sec": 64.92
+    },
+    {
+        "topic": "De-extinction: bringing the Woolly Mammoth back",
+        "relevance_score": 5,
+        "coherence_score": 5,
+        "script_file": "de-extinction_bringing_the_woo_script.md",
+        "audio_file": "de-extinction_bringing_the_woo_HM_GF.wav",
+        "host_gender": "MALE",
+        "guest_gender": "FEMALE",
+        "processing_time_sec": 58.31
+    },
+    {
+        "topic": "The psychology behind why we believe conspiracy theories",
+        "relevance_score": 5,
+        "coherence_score": 5,
+        "script_file": "the_psychology_behind_why_we_b_script.md",
+        "audio_file": "the_psychology_behind_why_we_b_HM_GF.wav",
+        "host_gender": "MALE",
+        "guest_gender": "FEMALE",
+        "processing_time_sec": 67.41
+    }
+]

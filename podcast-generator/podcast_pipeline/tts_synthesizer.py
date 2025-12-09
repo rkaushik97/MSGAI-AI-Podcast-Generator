@@ -33,14 +33,14 @@ class TTSSynthesizer:
 
     def synthesize(self, script: Script, output_path: str) -> None:
         """Synthesizes the dialogue into a WAV file."""
-        host_embed = self._get_speaker_embedding(script.metadata.HOST_GENDER)
-        guest_embed = self._get_speaker_embedding(script.metadata.GUEST_GENDER)
-        segments = re.split(r'(HOST:|GUEST:)', script.dialogue)
+        host_embed = self._get_speaker_embedding(script['metadata']['HOST_GENDER'])
+        guest_embed = self._get_speaker_embedding(script['metadata']['GUEST_GENDER'])
+        segments = re.split(r'(HOST:|GUEST:)', script['dialogue'])
 
         all_speech_parts = []
         current_speaker_embedding = None
 
-        LOGGER.info(f"Synthesizing audio segments for '{script.topic}'...")
+        LOGGER.info(f"Synthesizing audio segments for '{script['topic']}'.")
         for segment in segments:
             segment = segment.strip()
             

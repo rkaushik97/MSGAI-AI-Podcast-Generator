@@ -1,16 +1,19 @@
-from dataclasses import dataclass
+from typing import TypedDict
 
-@dataclass(frozen=True)
-class Metadata:
+class Metadata(TypedDict):
     """Immutable data structure for LLM-generated podcast metadata."""
     HOST_GENDER: str
     GUEST_GENDER: str
     GUEST_NAME: str
 
-@dataclass(frozen=True)
-class Script:
+class Script(TypedDict):
     """Immutable data structure for the podcast script."""
     topic: str
     dialogue: str
     metadata: Metadata
+
+class ScriptQualityScores(TypedDict):
+    """Immutable data structure for the quality scores returned by the LLM Judge."""
+    relevance_score: int
+    coherence_score: int
     

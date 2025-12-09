@@ -28,7 +28,7 @@ class ModelConstants:
     TTS_MODEL_ID = "microsoft/speecht5_tts"
     VOCODER_MODEL_ID = "microsoft/speecht5_hifigan"
     EMBEDDINGS_DATASET = "Matthijs/cmu-arctic-xvectors"
-    SILENCE_DURATION_SEC = 0.3
+    SILENCE_DURATION_SEC = 0.05
     SAMPLING_RATE = 16000
 
 # Speaker Embeddings Loader 
