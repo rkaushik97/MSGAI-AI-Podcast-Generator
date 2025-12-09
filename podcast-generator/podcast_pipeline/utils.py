@@ -11,10 +11,11 @@ LOGGER = logging.getLogger(__name__)
 
 # Environment and Token setup 
 
-def setup_environment(hf_token_env_var: str = "HUGGINGFACE_API_KEY") -> None:
+def setup_environment(hf_token_env_var: str = "HUGGINGFACE_API_KEY", hf_token: str | None = None) -> None:
     """Loads environment and logs into Hugging Face"""
     load_dotenv()
-    hf_token = os.getenv(hf_token_env_var)
+    if hf_token is None:
+        hf_token = os.getenv(hf_token_env_var)
     if hf_token:
         login(hf_token, add_to_git_credential=False)
     else:

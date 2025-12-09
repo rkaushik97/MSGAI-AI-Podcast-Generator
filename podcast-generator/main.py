@@ -5,7 +5,7 @@ from podcast_pipeline.tts_synthesizer import TTSSynthesizer
 from podcast_pipeline.utils import setup_environment, LOGGER
 
 
-def run_podcast_pipeline(topic: str, prompt_template: str, output_dir: str = "output"):
+def run_podcast_pipeline(topic: str, prompt_template: str, output_dir: str = "output", hf_token: str | None = None):
     """
     Executes the end-to-end LLM-to-TTS pipeline.
     
@@ -14,7 +14,7 @@ def run_podcast_pipeline(topic: str, prompt_template: str, output_dir: str = "ou
         output_dir: Directory to save the final WAV file.
     """
     
-    setup_environment() # Load token and set up logging
+    setup_environment(hf_token=hf_token) # Load token and set up logging
 
     try:
         # LLM Generation Stage
@@ -58,7 +58,13 @@ if __name__ == "__main__":
         default="podcast_script_v1",
         help="The template to use for the LLM prompt. It is defined in the prompt_manager.py file."
     )
+    parser.add_argument(
+        "--hf_token",
+        type=str,
+        default=None,
+        help="Hugging face token to download LLAMA model."
+    )
     
     args = parser.parse_args()
     
-    run_podcast_pipeline(args.topic, args.prompt_template, args.output_dir)
+    run_podcast_pipeline(args.topic, args.prompt_template, args.output_dir, args.hf_token)
