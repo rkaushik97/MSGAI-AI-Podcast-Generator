@@ -74,7 +74,7 @@ def run_podcast_pipeline(topic_input: str, prompt_template: str, output_dir: str
         output_dir: Directory to save the final files.
     """
     
-    setup_environment() # Load token and set up logging
+    setup_environment(hf_token=hf_token) # Load token and set up logging
 
     topics = []
     # Check if input is a file path
@@ -148,7 +148,13 @@ if __name__ == "__main__":
         default="podcast_script_v1",
         help="The template to use for the LLM prompt. It is defined in the prompt_manager.py file."
     )
+    parser.add_argument(
+        "--hf_token",
+        type=str,
+        default=None,
+        help="Hugging face token to download LLAMA model."
+    )
     
     args = parser.parse_args()
     
-    run_podcast_pipeline(args.topic, args.prompt_template, args.output_dir)
+    run_podcast_pipeline(args.topic, args.prompt_template, args.output_dir, args.hf_token)
