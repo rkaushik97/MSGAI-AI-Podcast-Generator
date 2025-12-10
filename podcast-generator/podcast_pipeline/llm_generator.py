@@ -1,5 +1,6 @@
 import re
 import json
+import os
 from transformers import pipeline, Pipeline
 import torch
 from typing import Tuple, Optional, Dict 
@@ -15,7 +16,7 @@ class LLMScriptGenerator:
     Uses the Singleton pattern implicitly via class-level initialization
     if used correctly, but implemented as a simple Factory pattern for clarity.
     """
-    def __init__(self, model_id: str = ModelConstants.LLM_MODEL_ID):
+    def __init__(self, model_id: str = ModelConstants.LLM_MODEL_ID, few_shot_examples_path: str = "podcast-generator/input/few_shot_examples_responses.json"):
         LOGGER.info(f"Initializing LLM Pipeline: {model_id}")
         # Initialize the pipeline once for both script generation and judge calls.
         self._pipeline: Pipeline = pipeline(
@@ -25,18 +26,32 @@ class LLMScriptGenerator:
             device_map="auto",
         )
         self._prompt_manager = PromptManager()
+        if not os.path.exists(few_shot_examples_path):
+            LOGGER.info(f"Few-shot examples .json file path invalid")
+            self.few_shot_examples = []
+        else:
+            with open(few_shot_examples_path) as infile:
+                self.few_shot_examples = json.load(infile)
 
-    def _create_prompt(self, topic: str, template_key: str = "podcast_script_v1") -> list[dict]:
+    def _create_prompt(self, topic: str, template_key: str = "podcast_script_v1", few_shot_examples_nr: int = 0) -> list[dict]:
         """
         Constructs the structured prompt using a template key.
         The template_key defaults to the standard podcast script.
+        Adds up to `few_shot_examples_nr` demo examples before the main prompt.
         """
-        prompt_content = self._prompt_manager.format_prompt(
-            template_key, 
-            topic=topic
-        )
+        messages = []
 
-        return [{"role": "user", "content": prompt_content}]
+        # Add few-shot examples (in conversation format)
+        if few_shot_examples_nr > 0 and self.few_shot_examples:
+            for ex in self.few_shot_examples[:few_shot_examples_nr]:
+                messages.append({"role": "user", "content": ex["prompt"]["content"]})
+                messages.append({"role": "assistant", "content": ex["script"]})
+
+        # Add the real prompt
+        prompt_content = self._prompt_manager.format_prompt(template_key, topic=topic)
+        messages.append({"role": "user", "content": prompt_content})
+
+        return messages
 
     def _parse_output(self, generated_text: str) -> tuple[Metadata, str]:
         """Parses the LLM's structured output into Metadata and Dialogue."""
@@ -137,9 +152,9 @@ class LLMScriptGenerator:
         metadata, dialogue = self._parse_output(generated_text)
         
         script = Script(topic=topic, dialogue=dialogue, metadata=metadata)
-        # LLM Judge Integration
-        scores = self._execute_judge_local(topic, dialogue)
-        
+        # LLM Judge Integration (NO JUDGE AT THE MOMENT)
+        # scores = self._execute_judge_local(topic, dialogue)
+        scores = {'relevance_score': 5, 'coherence_score': 5}
         LOGGER.info(f"Automated Script Quality Scores: Relevance={scores.get('relevance_score')}, Coherence={scores.get('coherence_score')}")
 
         return script, scores

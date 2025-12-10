@@ -26,8 +26,6 @@ class ModelConstants:
     """ Centralizes model IDs and paths."""
     LLM_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"
     TTS_MODEL_ID = "microsoft/speecht5_tts"
-    VOCODER_MODEL_ID = "microsoft/speecht5_hifigan"
-    EMBEDDINGS_DATASET = "Matthijs/cmu-arctic-xvectors"
     SILENCE_DURATION_SEC = 0.05
     SAMPLING_RATE = 24000
     # piper settings
@@ -40,18 +38,3 @@ class ModelConstants:
     KOKORO_VOICES_PATH = "../kokoro/voices-v1.0.bin"
     KOKORO_MALE_VOICE = "am_michael"
     KOKORO_FEMALE_VOICE = "af_sarah"
-
-# Speaker Embeddings Loader 
-
-# def load_speaker_embeddings() -> tuple[torch.Tensor, torch.Tensor]:
-#     """Loads and returns the Male and Female SpeechT5 embeddings."""
-#     LOGGER.info("Loading speaker embeddings...")
-#     try:
-#         embeddings_dataset = load_dataset(ModelConstants.EMBEDDINGS_DATASET, split="validation")
-#         # Index 0 is 'bdl' (Male), Index 7306 is 'slt' (Female)
-#         male_embedding = torch.tensor(embeddings_dataset[0]['xvector']).unsqueeze(0)
-#         female_embedding = torch.tensor(embeddings_dataset[7306]["xvector"]).unsqueeze(0)
-#         return male_embedding, female_embedding
-#     except Exception as e:
-#         LOGGER.error(f"Failed to load speaker embeddings: {str(e)}")
-#         raise
