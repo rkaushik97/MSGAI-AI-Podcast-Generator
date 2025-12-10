@@ -45,7 +45,7 @@ class LLMScriptGenerator:
         # Add few-shot examples (in conversation format)
         if few_shot_examples_nr > 0 and self.few_shot_examples:
             for ex in self.few_shot_examples[:few_shot_examples_nr]:
-                messages.append({"role": "user", "content": ex["prompt"]["content"]})
+                messages.append({"role": "user", "content": ex["prompt"][0]["content"]})
                 messages.append({"role": "assistant", "content": ex["script"]})
 
         # Add the real prompt
