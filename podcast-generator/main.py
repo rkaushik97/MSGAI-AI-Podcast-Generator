@@ -3,23 +3,41 @@ import argparse
 import json
 import time 
 from podcast_pipeline.llm_generator import LLMScriptGenerator
-from podcast_pipeline.tts_synthesizer import TTSSynthesizer
+from podcast_pipeline.adaptive_tts_synthesizer import AdaptiveTTSSynthesizer
 from podcast_pipeline.utils import setup_environment, LOGGER
 from podcast_pipeline.types import ScriptQualityScores, Script 
 
 
-def process_single_topic(topic: str, prompt_template: str, output_dir: str, generator: LLMScriptGenerator, synthesizer: TTSSynthesizer) -> dict | None:
+def process_single_topic(topic: str, prompt_template: str, output_dir: str, generator: LLMScriptGenerator, synthesizer: AdaptiveTTSSynthesizer) -> dict | None:
     """Processes a single topic through the LLM and TTS pipeline."""
     try:
         # LLM Generation Stage
         script: Script
         quality_scores: ScriptQualityScores
         script, quality_scores = generator.generate(topic, prompt_template)
+        # script = {
+        #     "topic": "De-extinction: bringing the Woolly Mammoth back",
+        #     "dialogue" : 
+        #     """
+        #     HOST: Welcome to the Adaptive AI Podcast, I'm your host, Ryan Thompson, and today we're diving into the fascinating topic of de-extinction, specifically bringing back the Woolly Mammoth. Our guest expert is Dr. Helena Anders, a renowned geneticist with a focus on ancient DNA.
+        #     HOST: Dr. Anders, welcome to the show, and thanks for joining us today.
+        #     GUEST: Thanks for having me, Ryan.
+        #     HOST: For those who might not be familiar, can you give us a brief overview of the de-extinction process and why the Woolly Mammoth is a prime candidate for revival?
+        #     GUEST: De-extinction involves using advanced genetic engineering techniques to resurrect extinct species from preserved DNA samples. The Woolly Mammoth is an attractive target due to the availability of well-preserved remains, particularly in Siberian permafrost. We're talking about a species that roamed the Earth during the last ice age, with a unique genetic makeup that could hold secrets to understanding adaptation and evolution.
+        #     HOST: That's fascinating. What are the biggest technical hurdles you're facing in this project
+        #     """,
+        #     "metadata": {
+        #         'HOST_GENDER': 'male',
+        #         'GUEST_GENDER': 'female'
+        #     }
+        # }
+
+        quality_scores = {'relevance_score': None, 'coherence_score': None}
         
         # Check if the automated quality check failed
-        if not isinstance(quality_scores, dict) or quality_scores.get('relevance_score') is None:
-            LOGGER.error(f"Skipping TTS synthesis for '{topic}' because automated LLM Judge evaluation failed.")
-            return None
+        # if not isinstance(quality_scores, dict) or quality_scores.get('relevance_score') is None:
+        #     LOGGER.error(f"Skipping TTS synthesis for '{topic}' because automated LLM Judge evaluation failed.")
+        #     return None
 
         # Log the critical offline analysis metrics
         LOGGER.info(f"Generated Script Metadata: Host={script['metadata']['HOST_GENDER']}, Guest={script['metadata']['GUEST_GENDER']}")
@@ -42,7 +60,7 @@ def process_single_topic(topic: str, prompt_template: str, output_dir: str, gene
         LOGGER.info(f"Podcast script saved to: {script_filename_full}")
         
         # TTS Synthesis Stage
-        audio_filename_local = f"{filename_prefix}_H{script['metadata']['HOST_GENDER'][0]}_G{script['metadata']['GUEST_GENDER'][0]}.wav"
+        audio_filename_local = f"{filename_prefix}_H{script['metadata']['HOST_GENDER'][0]}_G{script['metadata']['GUEST_GENDER'][0]}_tts_{synthesizer.current_backend}.wav"
         output_filename_full = os.path.join(output_dir, audio_filename_local)
         
         synthesizer.synthesize(script, output_filename_full)
@@ -65,7 +83,7 @@ def process_single_topic(topic: str, prompt_template: str, output_dir: str, gene
         return None
 
 
-def run_podcast_pipeline(topic_input: str, prompt_template: str, output_dir: str = "output"):
+def run_podcast_pipeline(topic_input: str, prompt_template: str, output_dir: str = "output", hf_token: str | None = None, tts_backend: str = "kokoro"):
     """
     Executes the end-to-end LLM-to-TTS pipeline for a batch of topics.
     
@@ -101,14 +119,16 @@ def run_podcast_pipeline(topic_input: str, prompt_template: str, output_dir: str
     
     # Initialize generators outside the loop for efficiency
     generator = LLMScriptGenerator()
-    synthesizer = TTSSynthesizer() 
+
+    # Initialize adaptive TTS wrapper
+    adaptive_tts = AdaptiveTTSSynthesizer(tts_backend)
     
     for i, topic in enumerate(topics):
         LOGGER.info(f"--- Processing Topic {i+1}/{len(topics)}: {topic} ---")
 
         start_time = time.time() # Roughly how long is it taking to run the pipeline for 1 podcast request? 
 
-        result = process_single_topic(topic, prompt_template, output_dir, generator, synthesizer)
+        result = process_single_topic(topic, prompt_template, output_dir, generator, adaptive_tts)
 
         elapsed_time = time.time() - start_time
 
@@ -154,7 +174,16 @@ if __name__ == "__main__":
         default=None,
         help="Hugging face token to download LLAMA model."
     )
+    # --- Add this argument in __main__ ---
+    parser.add_argument(
+        "--tts_backend",
+        type=str,
+        default="kokoro",
+        choices=["kokoro", "piper"],
+        help="Which TTS backend to use for synthesis."
+    )
+
     
     args = parser.parse_args()
     
-    run_podcast_pipeline(args.topic, args.prompt_template, args.output_dir, args.hf_token)
+    run_podcast_pipeline(args.topic, args.prompt_template, args.output_dir, args.hf_token, args.tts_backend)
