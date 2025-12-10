@@ -16,7 +16,7 @@ class LLMScriptGenerator:
     Uses the Singleton pattern implicitly via class-level initialization
     if used correctly, but implemented as a simple Factory pattern for clarity.
     """
-    def __init__(self, model_id: str = ModelConstants.LLM_MODEL_ID, few_shot_examples_path: str = "podcast-generator/input/few_shot_examples_responses.json"):
+    def __init__(self, model_id: str = ModelConstants.LLM_MODEL_ID, few_shot_examples_path: str = "./input/few_shot_examples_responses.json"):
         LOGGER.info(f"Initializing LLM Pipeline: {model_id}")
         # Initialize the pipeline once for both script generation and judge calls.
         self._pipeline: Pipeline = pipeline(
@@ -32,6 +32,7 @@ class LLMScriptGenerator:
         else:
             with open(few_shot_examples_path) as infile:
                 self.few_shot_examples = json.load(infile)
+            LOGGER.info(f"Few-shot examples json file loaded, it contains {len(self.few_shot_examples)} few-shot examples")
 
     def _create_prompt(self, topic: str, template_key: str = "podcast_script_v1", few_shot_examples_nr: int = 0) -> list[dict]:
         """
