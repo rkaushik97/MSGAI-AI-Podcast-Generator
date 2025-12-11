@@ -16,11 +16,11 @@ class LLMScriptGenerator:
     Uses the Singleton pattern implicitly via class-level initialization
     if used correctly, but implemented as a simple Factory pattern for clarity.
     """
-    def __init__(self, model_id: str = ModelConstants.LLM_MODEL_ID, few_shot_examples_path: str = "./input/few_shot_examples_responses.json"):
+    def __init__(self, model_id: str = ModelConstants.LLM_MODEL_ID, model_task: str = 'text-generation', few_shot_examples_path: str = "./input/few_shot_examples_responses.json"):
         LOGGER.info(f"Initializing LLM Pipeline: {model_id}")
         # Initialize the pipeline once for both script generation and judge calls.
         self._pipeline: Pipeline = pipeline(
-            "text-generation",
+            task=model_task,
             model=model_id,
             model_kwargs={"torch_dtype": torch.bfloat16},
             device_map="auto",
@@ -77,6 +77,31 @@ class LLMScriptGenerator:
             LOGGER.warning("LLM output delimiters missing. Using raw output.")
         
         return Metadata(**metadata), dialogue
+    
+    def reconstruct_llm_output(metadata, dialogue) -> str:
+        """
+        Reconstruct the original LLM output text from the parsed Metadata and dialogue.
+
+        This reverses the formatting applied by _parse_output().
+        """
+        metadata_lines = []
+
+        if metadata['HOST_GENDER']:
+            metadata_lines.append(f"HOST_GENDER: {metadata['HOST_GENDER']}")
+        if metadata["GUEST_GENDER"]:
+            metadata_lines.append(f"GUEST_GENDER: {metadata["GUEST_GENDER"]}")
+        if metadata["GUEST_NAME"]:
+            metadata_lines.append(f"GUEST_NAME: {metadata["GUEST_NAME"]}")
+
+        metadata_block = "\n".join(metadata_lines)
+
+        return (
+            "---METADATA---\n"
+            f"{metadata_block}\n"
+            "---DIALOGUE---\n"
+            f"{dialogue.strip()}\n"
+        )
+
 
     def _execute_judge_local(self, original_topic: str, generated_script: str) -> Dict[str, Optional[int]]:
         """
