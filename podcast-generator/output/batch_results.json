@@ -3,10 +3,81 @@
         "topic": "The Simulation Theory: Are we living in a video game?",
         "relevance_score": null,
         "coherence_score": null,
+        "script_file": "the_simulation_theory_are_we_l_script.md",
+        "audio_file": "the_simulation_theory_are_we_l_HM_GM_tts_piper.wav",
+        "host_gender": "MALE",
+        "guest_gender": "MALE",
+        "audio_quality": {
+            "wer": 0.023121387283236993,
+            "detailed_measures": {
+                "hits": 169,
+                "substitutions": 2,
+                "deletions": 2,
+                "insertions": 0
+            },
+            "audio_metrics": {
+                "sample_rate": 16000,
+                "duration_s": 77.148375,
+                "clipping_pct": 0.0003240508954336368,
+                "rms_dbfs": -17.297910163194512,
+                "spectral_flatness": 0.032334644347429276,
+                "voice_activity_ratio": 0.9655728328691304
+            }
+        },
+        "processing_time_sec": 24.05
+    },
+    {
+        "topic": "De-extinction: bringing the Woolly Mammoth back",
+        "relevance_score": null,
+        "coherence_score": null,
         "script_file": "de-extinction_bringing_the_woo_script.md",
-        "audio_file": "de-extinction_bringing_the_woo_Hm_Gf_tts_kokoro.wav",
-        "host_gender": "male",
-        "guest_gender": "female",
-        "processing_time_sec": 26.57
+        "audio_file": "de-extinction_bringing_the_woo_HM_GF_tts_piper.wav",
+        "host_gender": "MALE",
+        "guest_gender": "FEMALE",
+        "audio_quality": {
+            "wer": 0.3270440251572327,
+            "detailed_measures": {
+                "hits": 107,
+                "substitutions": 1,
+                "deletions": 51,
+                "insertions": 0
+            },
+            "audio_metrics": {
+                "sample_rate": 16000,
+                "duration_s": 67.9300625,
+                "clipping_pct": 0.00018401278520831628,
+                "rms_dbfs": -18.803985335950255,
+                "spectral_flatness": 0.03454338386654854,
+                "voice_activity_ratio": 0.9558065694404447
+            }
+        },
+        "processing_time_sec": 14.04
+    },
+    {
+        "topic": "The psychology behind why we believe conspiracy theories",
+        "relevance_score": null,
+        "coherence_score": null,
+        "script_file": "the_psychology_behind_why_we_b_script.md",
+        "audio_file": "the_psychology_behind_why_we_b_HM_GF_tts_piper.wav",
+        "host_gender": "MALE",
+        "guest_gender": "FEMALE",
+        "audio_quality": {
+            "wer": 0.24431818181818182,
+            "detailed_measures": {
+                "hits": 135,
+                "substitutions": 1,
+                "deletions": 40,
+                "insertions": 2
+            },
+            "audio_metrics": {
+                "sample_rate": 16000,
+                "duration_s": 77.856625,
+                "clipping_pct": 0.0004013788165104768,
+                "rms_dbfs": -17.687130990627672,
+                "spectral_flatness": 0.03297270089387894,
+                "voice_activity_ratio": 0.9650559602345979
+            }
+        },
+        "processing_time_sec": 14.86
     }
 ]
