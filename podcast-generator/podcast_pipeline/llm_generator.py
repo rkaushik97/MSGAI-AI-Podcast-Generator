@@ -1,5 +1,6 @@
 import re
 import json
+import os
 from transformers import pipeline, Pipeline
 import torch
 from typing import Tuple, Optional, Dict 
@@ -15,28 +16,43 @@ class LLMScriptGenerator:
     Uses the Singleton pattern implicitly via class-level initialization
     if used correctly, but implemented as a simple Factory pattern for clarity.
     """
-    def __init__(self, model_id: str = ModelConstants.LLM_MODEL_ID):
+    def __init__(self, model_id: str = ModelConstants.LLM_MODEL_ID, model_task: str = 'text-generation', few_shot_examples_path: str = "./input/few_shot_examples_responses.json"):
         LOGGER.info(f"Initializing LLM Pipeline: {model_id}")
         # Initialize the pipeline once for both script generation and judge calls.
         self._pipeline: Pipeline = pipeline(
-            "text-generation",
+            task=model_task,
             model=model_id,
             model_kwargs={"torch_dtype": torch.bfloat16},
             device_map="auto",
         )
         self._prompt_manager = PromptManager()
+        if not os.path.exists(few_shot_examples_path):
+            LOGGER.info(f"Few-shot examples .json file path invalid")
+            self.few_shot_examples = []
+        else:
+            with open(few_shot_examples_path) as infile:
+                self.few_shot_examples = json.load(infile)
+            LOGGER.info(f"Few-shot examples json file loaded, it contains {len(self.few_shot_examples)} few-shot examples")
 
-    def _create_prompt(self, topic: str, template_key: str = "podcast_script_v1") -> list[dict]:
+    def _create_prompt(self, topic: str, template_key: str = "podcast_script_v1", few_shot_examples_nr: int = 0) -> list[dict]:
         """
         Constructs the structured prompt using a template key.
         The template_key defaults to the standard podcast script.
+        Adds up to `few_shot_examples_nr` demo examples before the main prompt.
         """
-        prompt_content = self._prompt_manager.format_prompt(
-            template_key, 
-            topic=topic
-        )
+        messages = []
 
-        return [{"role": "user", "content": prompt_content}]
+        # Add few-shot examples (in conversation format)
+        if few_shot_examples_nr > 0 and self.few_shot_examples:
+            for ex in self.few_shot_examples[:few_shot_examples_nr]:
+                messages.append({"role": "user", "content": ex["prompt"][0]["content"]})
+                messages.append({"role": "assistant", "content": ex["script"]})
+
+        # Add the real prompt
+        prompt_content = self._prompt_manager.format_prompt(template_key, topic=topic)
+        messages.append({"role": "user", "content": prompt_content})
+
+        return messages
 
     def _parse_output(self, generated_text: str) -> tuple[Metadata, str]:
         """Parses the LLM's structured output into Metadata and Dialogue."""
@@ -61,6 +77,31 @@ class LLMScriptGenerator:
             LOGGER.warning("LLM output delimiters missing. Using raw output.")
         
         return Metadata(**metadata), dialogue
+    
+    def reconstruct_llm_output(metadata, dialogue) -> str:
+        """
+        Reconstruct the original LLM output text from the parsed Metadata and dialogue.
+
+        This reverses the formatting applied by _parse_output().
+        """
+        metadata_lines = []
+
+        if metadata['HOST_GENDER']:
+            metadata_lines.append(f"HOST_GENDER: {metadata['HOST_GENDER']}")
+        if metadata["GUEST_GENDER"]:
+            metadata_lines.append(f"GUEST_GENDER: {metadata["GUEST_GENDER"]}")
+        if metadata["GUEST_NAME"]:
+            metadata_lines.append(f"GUEST_NAME: {metadata["GUEST_NAME"]}")
+
+        metadata_block = "\n".join(metadata_lines)
+
+        return (
+            "---METADATA---\n"
+            f"{metadata_block}\n"
+            "---DIALOGUE---\n"
+            f"{dialogue.strip()}\n"
+        )
+
 
     def _execute_judge_local(self, original_topic: str, generated_script: str) -> Dict[str, Optional[int]]:
         """
@@ -116,20 +157,20 @@ class LLMScriptGenerator:
             return {"relevance_score": None, "coherence_score": None}
 
 
-    def generate(self, topic: str, template_key: str = "podcast_script_v1") -> Script:
+    def generate(self, topic: str, template_key: str = "podcast_script_v1", few_shot_examples_nr : int = 0, max_new_tokens: int = 256, temperature: float = 0.8) -> Script:
         """The primary public method to generate a full script.
 
         Args:
             topic: The topic for the podcast.
             template_key: The key of the template to use (e.g., 'podcast_script_v1').
         """
-        messages = self._create_prompt(topic, template_key)
+        messages = self._create_prompt(topic, template_key, few_shot_examples_nr)
         
         outputs = self._pipeline(
             messages,
-            max_new_tokens=256,
+            max_new_tokens=max_new_tokens,
             do_sample=True,
-            temperature=0.8,
+            temperature=temperature,
             pad_token_id=self._pipeline.tokenizer.eos_token_id,
         )
         
@@ -137,9 +178,13 @@ class LLMScriptGenerator:
         metadata, dialogue = self._parse_output(generated_text)
         
         script = Script(topic=topic, dialogue=dialogue, metadata=metadata)
-        # LLM Judge Integration
-        scores = self._execute_judge_local(topic, dialogue)
-        
+        # LLM Judge Integration (NO JUDGE AT THE MOMENT)
+        # scores = self._execute_judge_local(topic, dialogue)
+        scores = {'relevance_score': 5, 'coherence_score': 5}
         LOGGER.info(f"Automated Script Quality Scores: Relevance={scores.get('relevance_score')}, Coherence={scores.get('coherence_score')}")
 
         return script, scores
+    
+    def count_tokens(self, text: str) -> int:
+        return len(self._pipeline.tokenizer.encode(text, add_special_tokens=True))
+

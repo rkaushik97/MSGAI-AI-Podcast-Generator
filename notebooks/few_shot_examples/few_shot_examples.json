@@ -1,0 +1,102 @@
+[
+  {
+    "topic": "The rise of AI-generated art and its impact on creativity",
+    "script": "",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: The rise of AI-generated art and its impact on creativity\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ]
+  },
+  {
+    "topic": "Forgotten inventions that were ahead of their time",
+    "script": "",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: Forgotten inventions that were ahead of their time\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ]
+  },
+  {
+    "topic": "The science of dreams: decoding what our subconscious is telling us",
+    "script": "",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: The science of dreams: decoding what our subconscious is telling us\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ]
+  },
+  {
+    "topic": "Virtual reality therapy: treating phobias, PTSD, and social anxiety",
+    "script": "",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: Virtual reality therapy: treating phobias, PTSD, and social anxiety\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ]
+  },
+  {
+    "topic": "The mysteries of human memory: why we forget and misremember",
+    "script": "",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: The mysteries of human memory: why we forget and misremember\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ]
+  },
+  {
+    "topic": "Ancient astronomical knowledge and lost observatories",
+    "script": "",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: Ancient astronomical knowledge and lost observatories\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ]
+  },
+  {
+    "topic": "The future of deepfake technology and digital identity",
+    "script": "",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: The future of deepfake technology and digital identity\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ]
+  },
+  {
+    "topic": "Microbiomes and how gut bacteria influence behavior",
+    "script": "",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: Microbiomes and how gut bacteria influence behavior\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ]
+  },
+  {
+    "topic": "The untold history of secret societies and hidden power structures",
+    "script": "",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: The untold history of secret societies and hidden power structures\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ]
+  },
+  {
+    "topic": "Exploring the psychology of extreme sports and risk-taking behavior",
+    "script": "",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: Exploring the psychology of extreme sports and risk-taking behavior\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ]
+  }
+]

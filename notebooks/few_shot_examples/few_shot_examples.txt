@@ -1,0 +1,341 @@
+####################################################################################################
+Your entire output MUST start with the exact token: ---METADATA---
+
+---METADATA---
+HOST_GENDER: [MALE or FEMALE]
+GUEST_GENDER: [MALE or FEMALE]
+GUEST_NAME: Create a relevant fictional or historical expert name based on the topic
+---DIALOGUE---
+
+Your entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:
+HOST: …
+GUEST: …
+(continue dialogue)
+
+No other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.
+
+Content Requirements
+Podcast: Adaptive AI Podcast
+Topic: The rise of AI-generated art and its impact on creativity
+Length: 150–200 words
+
+Dialogue Structure (follow exactly):
+HOST: hook about topic
+HOST: podcast + host intro
+HOST: guest intro (MUST use the GUEST_NAME you generated)
+GUEST: brief greeting
+HOST: simple first question
+GUEST: 3–5 sentence answer
+HOST: follow-up question
+GUEST: short answer
+HOST: closing line: “Let’s get started.”
+
+---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---
+HOST:
+####################################################################################################
+Your entire output MUST start with the exact token: ---METADATA---
+
+---METADATA---
+HOST_GENDER: [MALE or FEMALE]
+GUEST_GENDER: [MALE or FEMALE]
+GUEST_NAME: Create a relevant fictional or historical expert name based on the topic
+---DIALOGUE---
+
+Your entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:
+HOST: …
+GUEST: …
+(continue dialogue)
+
+No other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.
+
+Content Requirements
+Podcast: Adaptive AI Podcast
+Topic: Forgotten inventions that were ahead of their time
+Length: 150–200 words
+
+Dialogue Structure (follow exactly):
+HOST: hook about topic
+HOST: podcast + host intro
+HOST: guest intro (MUST use the GUEST_NAME you generated)
+GUEST: brief greeting
+HOST: simple first question
+GUEST: 3–5 sentence answer
+HOST: follow-up question
+GUEST: short answer
+HOST: closing line: “Let’s get started.”
+
+---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---
+HOST:
+####################################################################################################
+Your entire output MUST start with the exact token: ---METADATA---
+
+---METADATA---
+HOST_GENDER: [MALE or FEMALE]
+GUEST_GENDER: [MALE or FEMALE]
+GUEST_NAME: Create a relevant fictional or historical expert name based on the topic
+---DIALOGUE---
+
+Your entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:
+HOST: …
+GUEST: …
+(continue dialogue)
+
+No other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.
+
+Content Requirements
+Podcast: Adaptive AI Podcast
+Topic: The science of dreams: decoding what our subconscious is telling us
+Length: 150–200 words
+
+Dialogue Structure (follow exactly):
+HOST: hook about topic
+HOST: podcast + host intro
+HOST: guest intro (MUST use the GUEST_NAME you generated)
+GUEST: brief greeting
+HOST: simple first question
+GUEST: 3–5 sentence answer
+HOST: follow-up question
+GUEST: short answer
+HOST: closing line: “Let’s get started.”
+
+---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---
+HOST:
+####################################################################################################
+Your entire output MUST start with the exact token: ---METADATA---
+
+---METADATA---
+HOST_GENDER: [MALE or FEMALE]
+GUEST_GENDER: [MALE or FEMALE]
+GUEST_NAME: Create a relevant fictional or historical expert name based on the topic
+---DIALOGUE---
+
+Your entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:
+HOST: …
+GUEST: …
+(continue dialogue)
+
+No other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.
+
+Content Requirements
+Podcast: Adaptive AI Podcast
+Topic: Virtual reality therapy: treating phobias, PTSD, and social anxiety
+Length: 150–200 words
+
+Dialogue Structure (follow exactly):
+HOST: hook about topic
+HOST: podcast + host intro
+HOST: guest intro (MUST use the GUEST_NAME you generated)
+GUEST: brief greeting
+HOST: simple first question
+GUEST: 3–5 sentence answer
+HOST: follow-up question
+GUEST: short answer
+HOST: closing line: “Let’s get started.”
+
+---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---
+HOST:
+####################################################################################################
+Your entire output MUST start with the exact token: ---METADATA---
+
+---METADATA---
+HOST_GENDER: [MALE or FEMALE]
+GUEST_GENDER: [MALE or FEMALE]
+GUEST_NAME: Create a relevant fictional or historical expert name based on the topic
+---DIALOGUE---
+
+Your entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:
+HOST: …
+GUEST: …
+(continue dialogue)
+
+No other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.
+
+Content Requirements
+Podcast: Adaptive AI Podcast
+Topic: The mysteries of human memory: why we forget and misremember
+Length: 150–200 words
+
+Dialogue Structure (follow exactly):
+HOST: hook about topic
+HOST: podcast + host intro
+HOST: guest intro (MUST use the GUEST_NAME you generated)
+GUEST: brief greeting
+HOST: simple first question
+GUEST: 3–5 sentence answer
+HOST: follow-up question
+GUEST: short answer
+HOST: closing line: “Let’s get started.”
+
+---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---
+HOST:
+####################################################################################################
+Your entire output MUST start with the exact token: ---METADATA---
+
+---METADATA---
+HOST_GENDER: [MALE or FEMALE]
+GUEST_GENDER: [MALE or FEMALE]
+GUEST_NAME: Create a relevant fictional or historical expert name based on the topic
+---DIALOGUE---
+
+Your entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:
+HOST: …
+GUEST: …
+(continue dialogue)
+
+No other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.
+
+Content Requirements
+Podcast: Adaptive AI Podcast
+Topic: Ancient astronomical knowledge and lost observatories
+Length: 150–200 words
+
+Dialogue Structure (follow exactly):
+HOST: hook about topic
+HOST: podcast + host intro
+HOST: guest intro (MUST use the GUEST_NAME you generated)
+GUEST: brief greeting
+HOST: simple first question
+GUEST: 3–5 sentence answer
+HOST: follow-up question
+GUEST: short answer
+HOST: closing line: “Let’s get started.”
+
+---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---
+HOST:
+####################################################################################################
+Your entire output MUST start with the exact token: ---METADATA---
+
+---METADATA---
+HOST_GENDER: [MALE or FEMALE]
+GUEST_GENDER: [MALE or FEMALE]
+GUEST_NAME: Create a relevant fictional or historical expert name based on the topic
+---DIALOGUE---
+
+Your entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:
+HOST: …
+GUEST: …
+(continue dialogue)
+
+No other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.
+
+Content Requirements
+Podcast: Adaptive AI Podcast
+Topic: The future of deepfake technology and digital identity
+Length: 150–200 words
+
+Dialogue Structure (follow exactly):
+HOST: hook about topic
+HOST: podcast + host intro
+HOST: guest intro (MUST use the GUEST_NAME you generated)
+GUEST: brief greeting
+HOST: simple first question
+GUEST: 3–5 sentence answer
+HOST: follow-up question
+GUEST: short answer
+HOST: closing line: “Let’s get started.”
+
+---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---
+HOST:
+####################################################################################################
+Your entire output MUST start with the exact token: ---METADATA---
+
+---METADATA---
+HOST_GENDER: [MALE or FEMALE]
+GUEST_GENDER: [MALE or FEMALE]
+GUEST_NAME: Create a relevant fictional or historical expert name based on the topic
+---DIALOGUE---
+
+Your entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:
+HOST: …
+GUEST: …
+(continue dialogue)
+
+No other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.
+
+Content Requirements
+Podcast: Adaptive AI Podcast
+Topic: Microbiomes and how gut bacteria influence behavior
+Length: 150–200 words
+
+Dialogue Structure (follow exactly):
+HOST: hook about topic
+HOST: podcast + host intro
+HOST: guest intro (MUST use the GUEST_NAME you generated)
+GUEST: brief greeting
+HOST: simple first question
+GUEST: 3–5 sentence answer
+HOST: follow-up question
+GUEST: short answer
+HOST: closing line: “Let’s get started.”
+
+---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---
+HOST:
+####################################################################################################
+Your entire output MUST start with the exact token: ---METADATA---
+
+---METADATA---
+HOST_GENDER: [MALE or FEMALE]
+GUEST_GENDER: [MALE or FEMALE]
+GUEST_NAME: Create a relevant fictional or historical expert name based on the topic
+---DIALOGUE---
+
+Your entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:
+HOST: …
+GUEST: …
+(continue dialogue)
+
+No other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.
+
+Content Requirements
+Podcast: Adaptive AI Podcast
+Topic: The untold history of secret societies and hidden power structures
+Length: 150–200 words
+
+Dialogue Structure (follow exactly):
+HOST: hook about topic
+HOST: podcast + host intro
+HOST: guest intro (MUST use the GUEST_NAME you generated)
+GUEST: brief greeting
+HOST: simple first question
+GUEST: 3–5 sentence answer
+HOST: follow-up question
+GUEST: short answer
+HOST: closing line: “Let’s get started.”
+
+---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---
+HOST:
+####################################################################################################
+Your entire output MUST start with the exact token: ---METADATA---
+
+---METADATA---
+HOST_GENDER: [MALE or FEMALE]
+GUEST_GENDER: [MALE or FEMALE]
+GUEST_NAME: Create a relevant fictional or historical expert name based on the topic
+---DIALOGUE---
+
+Your entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:
+HOST: …
+GUEST: …
+(continue dialogue)
+
+No other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.
+
+Content Requirements
+Podcast: Adaptive AI Podcast
+Topic: Exploring the psychology of extreme sports and risk-taking behavior
+Length: 150–200 words
+
+Dialogue Structure (follow exactly):
+HOST: hook about topic
+HOST: podcast + host intro
+HOST: guest intro (MUST use the GUEST_NAME you generated)
+GUEST: brief greeting
+HOST: simple first question
+GUEST: 3–5 sentence answer
+HOST: follow-up question
+GUEST: short answer
+HOST: closing line: “Let’s get started.”
+
+---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---
+HOST:
+####################################################################################################

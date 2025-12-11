@@ -1,0 +1,442 @@
+[
+    {
+        "topic": "The Simulation Theory: Are we living in a video game?",
+        "few_shot_nr": 0,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 7.40296483039856,
+        "inference_seconds": 2.7086546421051025,
+        "total_time_seconds": 10.111619472503662,
+        "output_text": {
+            "topic": "The Simulation Theory: Are we living in a video game?",
+            "dialogue": "HOST: Welcome to the Adaptive AI Podcast, where we dive into the cutting-edge world of artificial intelligence and explore its far-reaching implications on our lives. I",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Elliot Thompson"
+            }
+        },
+        "prompt_token_count": 251,
+        "output_token_count": 65,
+        "total_tokens": 316
+    },
+    {
+        "topic": "The Simulation Theory: Are we living in a video game?",
+        "few_shot_nr": 5,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.7467875480651855,
+        "inference_seconds": 2.5579771995544434,
+        "total_time_seconds": 9.304764747619629,
+        "output_text": {
+            "topic": "The Simulation Theory: Are we living in a video game?",
+            "dialogue": "HOST: Imagine a world where everything you experience is a simulated reality, created by a more advanced civilization.\nHOST: Welcome to the Adaptive AI Podcast,",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Atlas Blackwood"
+            }
+        },
+        "prompt_token_count": 2943,
+        "output_token_count": 65,
+        "total_tokens": 3008
+    },
+    {
+        "topic": "De-extinction: bringing the Woolly Mammoth back",
+        "few_shot_nr": 0,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.934869289398193,
+        "inference_seconds": 2.3311543464660645,
+        "total_time_seconds": 9.266023635864258,
+        "output_text": {
+            "topic": "De-extinction: bringing the Woolly Mammoth back",
+            "dialogue": "HOST: Welcome to the Adaptive AI Podcast, I'm your host, Alex Thompson. Today, we're going to talk about a fascinating topic: de-ext",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "FEMALE",
+                "GUEST_NAME": "Dr. Sofia Rodriguez"
+            }
+        },
+        "prompt_token_count": 251,
+        "output_token_count": 65,
+        "total_tokens": 316
+    },
+    {
+        "topic": "De-extinction: bringing the Woolly Mammoth back",
+        "few_shot_nr": 5,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.661229848861694,
+        "inference_seconds": 2.570030450820923,
+        "total_time_seconds": 9.231260299682617,
+        "output_text": {
+            "topic": "De-extinction: bringing the Woolly Mammoth back",
+            "dialogue": "HOST: Imagine walking alongside a Woolly Mammoth, its shaggy fur and trunk a testament to a bygone era. Could we",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Viktor Kuznetsov"
+            }
+        },
+        "prompt_token_count": 2943,
+        "output_token_count": 65,
+        "total_tokens": 3008
+    },
+    {
+        "topic": "Artificial General Intelligence vs. Human Intuition",
+        "few_shot_nr": 0,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.707114219665527,
+        "inference_seconds": 2.3213069438934326,
+        "total_time_seconds": 9.02842116355896,
+        "output_text": {
+            "topic": "Artificial General Intelligence vs. Human Intuition",
+            "dialogue": "HOST: Welcome to the Adaptive AI Podcast, where we explore the intersection of technology and human experience. I'm your host, Alex Chen.\nHOST: Today",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "FEMALE",
+                "GUEST_NAME": "Dr. Rachel Kim"
+            }
+        },
+        "prompt_token_count": 248,
+        "output_token_count": 65,
+        "total_tokens": 313
+    },
+    {
+        "topic": "Artificial General Intelligence vs. Human Intuition",
+        "few_shot_nr": 5,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.652988433837891,
+        "inference_seconds": 2.589951276779175,
+        "total_time_seconds": 9.242939710617065,
+        "output_text": {
+            "topic": "Artificial General Intelligence vs. Human Intuition",
+            "dialogue": "HOST: Imagine a world where machines possess the same level of intuition and creativity as humans. Sounds like science fiction, but it\u2019s a reality we",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Cassius Blackwood"
+            }
+        },
+        "prompt_token_count": 2940,
+        "output_token_count": 65,
+        "total_tokens": 3005
+    },
+    {
+        "topic": "The psychology behind why we believe conspiracy theories",
+        "few_shot_nr": 0,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.847508668899536,
+        "inference_seconds": 2.3591690063476562,
+        "total_time_seconds": 9.206677675247192,
+        "output_text": {
+            "topic": "The psychology behind why we believe conspiracy theories",
+            "dialogue": "HOST: Welcome to the Adaptive AI Podcast, I'm your host, Alex Thompson. Today, we're going to explore the psychology behind why",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "FEMALE",
+                "GUEST_NAME": "Dr. Emily J. Welles"
+            }
+        },
+        "prompt_token_count": 248,
+        "output_token_count": 65,
+        "total_tokens": 313
+    },
+    {
+        "topic": "The psychology behind why we believe conspiracy theories",
+        "few_shot_nr": 5,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.729845285415649,
+        "inference_seconds": 2.581399440765381,
+        "total_time_seconds": 9.31124472618103,
+        "output_text": {
+            "topic": "The psychology behind why we believe conspiracy theories",
+            "dialogue": "HOST: From moon landings to vaccines, conspiracy theories surround us, often sparking intense debate and division.\nHOST: Welcome to the Adaptive AI",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Cassius Wellesley"
+            }
+        },
+        "prompt_token_count": 2940,
+        "output_token_count": 65,
+        "total_tokens": 3005
+    },
+    {
+        "topic": "The future of commercial space tourism",
+        "few_shot_nr": 0,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.835180044174194,
+        "inference_seconds": 2.3659238815307617,
+        "total_time_seconds": 9.201103925704956,
+        "output_text": {
+            "topic": "The future of commercial space tourism",
+            "dialogue": "HOST: Space travel is no longer just for astronauts, with private companies like Virgin Galactic and Blue Origin leading the charge in commercial space tourism. Welcome to the",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Elliot Thompson"
+            }
+        },
+        "prompt_token_count": 246,
+        "output_token_count": 65,
+        "total_tokens": 311
+    },
+    {
+        "topic": "The future of commercial space tourism",
+        "few_shot_nr": 5,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.687706708908081,
+        "inference_seconds": 2.5789029598236084,
+        "total_time_seconds": 9.26660966873169,
+        "output_text": {
+            "topic": "The future of commercial space tourism",
+            "dialogue": "HOST: Imagine soaring through the cosmos, witnessing breathtaking views, and experiencing weightlessness without being an astronaut. Commercial space tourism is making it possible.\nHOST:",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Captain Julian Blackwood"
+            }
+        },
+        "prompt_token_count": 2938,
+        "output_token_count": 65,
+        "total_tokens": 3003
+    },
+    {
+        "topic": "Theoretical physics of time travel",
+        "few_shot_nr": 0,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.75127387046814,
+        "inference_seconds": 2.3752474784851074,
+        "total_time_seconds": 9.126521348953247,
+        "output_text": {
+            "topic": "Theoretical physics of time travel",
+            "dialogue": "HOST: Time travel, a staple of science fiction, but what if it were more than just a fantasy? Welcome to the Adaptive AI Podcast,",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Felix Wellesley"
+            }
+        },
+        "prompt_token_count": 246,
+        "output_token_count": 65,
+        "total_tokens": 311
+    },
+    {
+        "topic": "Theoretical physics of time travel",
+        "few_shot_nr": 5,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.657998561859131,
+        "inference_seconds": 2.563870906829834,
+        "total_time_seconds": 9.221869468688965,
+        "output_text": {
+            "topic": "Theoretical physics of time travel",
+            "dialogue": "HOST: Imagine visiting the past, altering pivotal moments in history, and witnessing the future unfold before your eyes.\nHOST: Welcome to the Adaptive AI Podcast",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Felix Thorne"
+            }
+        },
+        "prompt_token_count": 2938,
+        "output_token_count": 65,
+        "total_tokens": 3003
+    },
+    {
+        "topic": "Brain-Computer Interfaces: Merging mind and machine",
+        "few_shot_nr": 0,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.651992321014404,
+        "inference_seconds": 2.3314568996429443,
+        "total_time_seconds": 8.983449220657349,
+        "output_text": {
+            "topic": "Brain-Computer Interfaces: Merging mind and machine",
+            "dialogue": "HOST: Welcome to the Adaptive AI Podcast, I'm your host, Ryan Thompson. Today, we're exploring the fascinating world of Brain-Computer Interfaces,",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "FEMALE",
+                "GUEST_NAME": "Dr. Sofia Patel"
+            }
+        },
+        "prompt_token_count": 250,
+        "output_token_count": 65,
+        "total_tokens": 315
+    },
+    {
+        "topic": "Brain-Computer Interfaces: Merging mind and machine",
+        "few_shot_nr": 5,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.791094064712524,
+        "inference_seconds": 2.5682997703552246,
+        "total_time_seconds": 9.359393835067749,
+        "output_text": {
+            "topic": "Brain-Computer Interfaces: Merging mind and machine",
+            "dialogue": "HOST: Imagine controlling your surroundings with just a thought, a world where the boundaries between mind and machine dissolve.\nHOST: Welcome to the Adaptive AI",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Julian Rykhard"
+            }
+        },
+        "prompt_token_count": 2942,
+        "output_token_count": 65,
+        "total_tokens": 3007
+    },
+    {
+        "topic": "The Fermi Paradox: Where is everybody?",
+        "few_shot_nr": 0,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.75370717048645,
+        "inference_seconds": 2.3327934741973877,
+        "total_time_seconds": 9.086500644683838,
+        "output_text": {
+            "topic": "The Fermi Paradox: Where is everybody?",
+            "dialogue": "HOST: Welcome to the Adaptive AI Podcast, I'm your host, Ryan Thompson, and today we're diving into one of the most intriguing and mind-b",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "FEMALE",
+                "GUEST_NAME": "Dr. Sophia Patel"
+            }
+        },
+        "prompt_token_count": 249,
+        "output_token_count": 65,
+        "total_tokens": 314
+    },
+    {
+        "topic": "The Fermi Paradox: Where is everybody?",
+        "few_shot_nr": 5,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.6346142292022705,
+        "inference_seconds": 2.592798948287964,
+        "total_time_seconds": 9.227413177490234,
+        "output_text": {
+            "topic": "The Fermi Paradox: Where is everybody?",
+            "dialogue": "HOST: Imagine the universe teeming with intelligent life, yet we remain eerily alone in the vast expanse of space.\nHOST: Welcome to the",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Atlas Blackwood"
+            }
+        },
+        "prompt_token_count": 2941,
+        "output_token_count": 65,
+        "total_tokens": 3006
+    },
+    {
+        "topic": "The search for the Lost City of Atlantis",
+        "few_shot_nr": 0,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.869627237319946,
+        "inference_seconds": 2.3383991718292236,
+        "total_time_seconds": 9.20802640914917,
+        "output_text": {
+            "topic": "The search for the Lost City of Atlantis",
+            "dialogue": "HOST: The search for the Lost City of Atlantis has captivated our imagination for centuries, with numerous claims of its discovery and excavation. From Plato's ancient",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "FEMALE",
+                "GUEST_NAME": "Dr. Sophia Patel"
+            }
+        },
+        "prompt_token_count": 248,
+        "output_token_count": 65,
+        "total_tokens": 313
+    },
+    {
+        "topic": "The search for the Lost City of Atlantis",
+        "few_shot_nr": 5,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.8585076332092285,
+        "inference_seconds": 2.5766263008117676,
+        "total_time_seconds": 9.435133934020996,
+        "output_text": {
+            "topic": "The search for the Lost City of Atlantis",
+            "dialogue": "HOST: Imagine stumbling upon a civilization that rivaled ancient Greece, lost to the sands of time. The legend of Atlantis beckons.\nHOST:",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Cassius Blackwood"
+            }
+        },
+        "prompt_token_count": 2940,
+        "output_token_count": 65,
+        "total_tokens": 3005
+    },
+    {
+        "topic": "Cryptozoology: The hunt for Bigfoot and Nessie",
+        "few_shot_nr": 0,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.804891109466553,
+        "inference_seconds": 2.3631303310394287,
+        "total_time_seconds": 9.168021440505981,
+        "output_text": {
+            "topic": "Cryptozoology: The hunt for Bigfoot and Nessie",
+            "dialogue": "HOST: Welcome to the Adaptive AI Podcast, where we explore the intersection of science, technology, and the unknown. I'm your host, Max",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "FEMALE",
+                "GUEST_NAME": "Dr. Elara Vex"
+            }
+        },
+        "prompt_token_count": 252,
+        "output_token_count": 65,
+        "total_tokens": 317
+    },
+    {
+        "topic": "Cryptozoology: The hunt for Bigfoot and Nessie",
+        "few_shot_nr": 5,
+        "max_tokens": 64,
+        "temperature": 0.8,
+        "cold_start": true,
+        "model_load_seconds": 6.870412349700928,
+        "inference_seconds": 2.5545647144317627,
+        "total_time_seconds": 9.42497706413269,
+        "output_text": {
+            "topic": "Cryptozoology: The hunt for Bigfoot and Nessie",
+            "dialogue": "HOST: Imagine stumbling upon evidence of a creature thought to be purely mythological \u2013 a glimpse of the unknown that challenges our understanding of",
+            "metadata": {
+                "HOST_GENDER": "MALE",
+                "GUEST_GENDER": "MALE",
+                "GUEST_NAME": "Dr. Thaddeus Wychwood"
+            }
+        },
+        "prompt_token_count": 2944,
+        "output_token_count": 65,
+        "total_tokens": 3009
+    }
+]

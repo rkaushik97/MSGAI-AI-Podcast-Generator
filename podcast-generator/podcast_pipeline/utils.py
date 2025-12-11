@@ -26,8 +26,6 @@ class ModelConstants:
     """ Centralizes model IDs and paths."""
     LLM_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"
     TTS_MODEL_ID = "microsoft/speecht5_tts"
-    VOCODER_MODEL_ID = "microsoft/speecht5_hifigan"
-    EMBEDDINGS_DATASET = "Matthijs/cmu-arctic-xvectors"
     SILENCE_DURATION_SEC = 0.05
     SAMPLING_RATE = 24000
     # piper settings

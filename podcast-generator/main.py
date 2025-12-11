@@ -192,7 +192,7 @@ def run_podcast_pipeline(
             LOGGER.info(f"--- Topic {i+1} failed after {elapsed_time:.2f} seconds. ---")
 
     # Save all results to a summary file
-    summary_path = os.path.join(output_dir, "batch_results.json")
+    summary_path = os.path.join(output_dir, f"batch_results_{tts_backend}.json")
     with open(summary_path, 'w', encoding='utf-8') as f:
         json.dump(all_results, f, indent=4)
     
