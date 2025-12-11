@@ -132,20 +132,20 @@ class LLMScriptGenerator:
             return {"relevance_score": None, "coherence_score": None}
 
 
-    def generate(self, topic: str, template_key: str = "podcast_script_v1") -> Script:
+    def generate(self, topic: str, template_key: str = "podcast_script_v1", few_shot_examples_nr : int = 0, max_new_tokens: int = 256, temperature: float = 0.8) -> Script:
         """The primary public method to generate a full script.
 
         Args:
             topic: The topic for the podcast.
             template_key: The key of the template to use (e.g., 'podcast_script_v1').
         """
-        messages = self._create_prompt(topic, template_key)
+        messages = self._create_prompt(topic, template_key, few_shot_examples_nr)
         
         outputs = self._pipeline(
             messages,
-            max_new_tokens=256,
+            max_new_tokens=max_new_tokens,
             do_sample=True,
-            temperature=0.8,
+            temperature=temperature,
             pad_token_id=self._pipeline.tokenizer.eos_token_id,
         )
         
@@ -159,3 +159,7 @@ class LLMScriptGenerator:
         LOGGER.info(f"Automated Script Quality Scores: Relevance={scores.get('relevance_score')}, Coherence={scores.get('coherence_score')}")
 
         return script, scores
+    
+    def count_tokens(self, text: str) -> int:
+        return len(self._pipeline.tokenizer.encode(text, add_special_tokens=True))
+
