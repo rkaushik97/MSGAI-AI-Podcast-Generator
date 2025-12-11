@@ -1,0 +1,21 @@
+{
+  "audio_path": "output/the_psychology_behind_why_we_b_HM_GF_tts_piper.wav",
+  "transcript_path": "output/the_psychology_behind_why_we_b_script.md",
+  "wer": 0.24431818181818182,
+  "detailed_measures": {
+    "hits": 135,
+    "substitutions": 1,
+    "deletions": 40,
+    "insertions": 2
+  },
+  "audio_metrics": {
+    "sample_rate": 16000,
+    "duration_s": 77.856625,
+    "clipping_pct": 0.0004013788165104768,
+    "rms_dbfs": -17.687130990627672,
+    "spectral_flatness": 0.03297270089387894,
+    "voice_activity_ratio": 0.9650559602345979
+  },
+  "hypothesis_raw_preview": "Conspiracy theories have been a staple of human thought for centuries, from ancient myths to modern-day speculations. They can be fascinating, but also damaging. behind why we believe conspiracy theories. Hi, Alex. Thanks for having me. Dr. Patel, many of us have found ourselves caught up in a conspiracy theory at some point in our lives. What do you think drives this phenomenon? I believe it's a combination of cognitive biases, such as confirmation bias and the Dunn and Kruger effect, which lead people to selectively seek out information that confirms their preconceived notions. Additionally, the rise of social media has created an environment where misinformation can spread quickly and be amplified by social influence. People also tend to be more drawn to narratives that simplify complex issues and provide a sense of control in an uncertain world.",
+  "reference_preview": "Conspiracy theories have been a staple of human thought for centuries, from ancient myths to modern-day speculations. They can be fascinating, but also damaging. Adaptive AI Podcast, I'm your host, Alex Thompson. Welcome to our show where we dive into the complex world of AI and human behavior. Today, we're joined by Dr. Sophia Patel, a renowned psychologist who's spent years studying the psychology behind why we believe conspiracy theories. Hi Alex, thanks for having me. Dr. Patel, many of us have found ourselves caught up in a conspiracy theory at some point in our lives. What do you think drives this phenomenon? I believe it's a combination of cognitive biases, such as confirmation bias and the Dunning-Kruger effect, which lead people to selectively seek out information that confirms their preconceived notions. Additionally, the rise of social media has created an environment where misinformation can spread quickly and be amplified by social influence. People also tend to be more dr"
+}

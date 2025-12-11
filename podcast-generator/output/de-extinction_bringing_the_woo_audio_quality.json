@@ -1,0 +1,21 @@
+{
+  "audio_path": "output/de-extinction_bringing_the_woo_HM_GF_tts_piper.wav",
+  "transcript_path": "output/de-extinction_bringing_the_woo_script.md",
+  "wer": 0.3270440251572327,
+  "detailed_measures": {
+    "hits": 107,
+    "substitutions": 1,
+    "deletions": 51,
+    "insertions": 0
+  },
+  "audio_metrics": {
+    "sample_rate": 16000,
+    "duration_s": 67.9300625,
+    "clipping_pct": 0.00018401278520831628,
+    "rms_dbfs": -18.803985335950255,
+    "spectral_flatness": 0.03454338386654854,
+    "voice_activity_ratio": 0.9558065694404447
+  },
+  "hypothesis_raw_preview": "Welcome to the Adaptive AI Podcast. I'm your host, Ryan Thompson, and today we're exploring the fascinating topic of de-extinction, bringing back the woolly mammoth. Ryan Thompson, I'm Ryan Thompson, and this is the Adaptive AI Podcast, where we dive into the latest advancements in artificial intelligence, and today we're taking a step back in time to talk about reviving one of history's most iconic creatures. Dr. Vaskas, welcome to the show. Let's dive right in what inspired you to pursue the de-extinction of the woolly mammoth. by bringing back the mammoth, we can gain insights into the evolution of its traits and potentially apply that knowledge to.",
+  "reference_preview": "Welcome to the Adaptive AI Podcast, I'm your host, Ryan Thompson, and today we're exploring the fascinating topic of de-extinction – bringing back the Woolly Mammoth. Ryan Thompson: I'm Ryan Thompson, and this is the Adaptive AI Podcast, where we dive into the latest advancements in artificial intelligence, and today we're taking a step back in time to talk about reviving one of history's most iconic creatures. Ryan Thompson: Joining me is Dr. Helena Vasquez, a renowned geneticist and expert in the field of de-extinction. Dr. Vasquez, welcome to the show. Thank you, Ryan, it's great to be here. Let's dive right in – what inspired you to pursue the de-extinction of the Woolly Mammoth? The Woolly Mammoth's genetic material has been preserved in permafrost for thousands of years, providing a unique opportunity to study and learn from its biology. By bringing back the Mammoth, we can gain insights into the evolution of its traits and potentially apply that knowledge to"
+}

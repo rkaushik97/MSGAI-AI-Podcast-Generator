@@ -40,6 +40,10 @@ class ModelConstants:
     KOKORO_VOICES_PATH = "../kokoro/voices-v1.0.bin"
     KOKORO_MALE_VOICE = "am_michael"
     KOKORO_FEMALE_VOICE = "af_sarah"
+    # audio quality settings
+    ASR_MODEL_ID = "openai/whisper-small"
+    ASR_DEVICE = 0  # -1 for CPU, 0 for GPU 0
+    
 
 # Speaker Embeddings Loader 
 
