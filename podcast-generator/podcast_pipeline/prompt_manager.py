@@ -27,6 +27,18 @@ LLM_JUDGE_SYSTEM_INSTRUCTION_V2 = (
     "- Compliance (1-5): How well does the script follow the instructions that were provided to the model, including structure, metadata usage, and style."
 )
 
+LLM_JUDGE_SYSTEM_INSTRUCTION_V3 = (
+    "You are an impartial, expert evaluator of podcast scripts. Your task is to score the GENERATED SCRIPT "
+    "based on the original topic request and the instructions that were given to the model. "
+    "You MUST output a JSON object containing only the keys 'relevance_score', 'coherence_score', and 'compliance_score', "
+    "all as integers from 1 (Very Poor) to 10 (Excellent). "
+    "DO NOT provide any external commentary, reasoning, or text outside of the required JSON object.\n\n"
+    "Scoring Criteria:\n"
+    "- Relevance (1-10): How closely and accurately does the script address the original topic request.\n"
+    "- Coherence (1-10): Does the script flow logically? Are the transitions between speakers smooth? Is the structure sound?\n"
+    "- Compliance (1-10): How well does the script follow the instructions that were provided to the model, including structure, metadata usage, and style."
+)
+
 PROMPT_TEMPLATES = {
     "podcast_script_v1": """
 Your entire output MUST start with the exact token: ---METADATA---
@@ -83,6 +95,26 @@ Please evaluate the following GENERATED SCRIPT based on the ORIGINAL TOPIC REQUE
     "llm_judge_v2":
     {
     "system_instruction": LLM_JUDGE_SYSTEM_INSTRUCTION_V2,
+    "user_query": """
+EVALUATION TASK:
+Please evaluate the following GENERATED SCRIPT based on the ORIGINAL TOPIC REQUEST and the INSTRUCTIONS GIVEN TO THE MODEL.
+
+--- ORIGINAL PROMPT INSTRUCTIONS ---
+{original_prompt}
+
+--- ORIGINAL TOPIC REQUEST ---
+{original_topic}
+
+--- GENERATED SCRIPT ---
+{generated_script}
+"""
+    }, 
+
+    # Template for the LLM Judge (included compliance score, to verify how
+    # well the model follow the instructions), added granularity
+    "llm_judge_v3":
+    {
+    "system_instruction": LLM_JUDGE_SYSTEM_INSTRUCTION_V3,
     "user_query": """
 EVALUATION TASK:
 Please evaluate the following GENERATED SCRIPT based on the ORIGINAL TOPIC REQUEST and the INSTRUCTIONS GIVEN TO THE MODEL.
