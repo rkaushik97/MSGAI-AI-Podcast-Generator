@@ -1,0 +1,152 @@
+[
+  {
+    "topic": "The rise of AI-generated art and its impact on creativity",
+    "script": "---METADATA---\nHOST-GENDER: MALE\nGUEST_GENDER: FEMALE\nGUEST_NAME: Prof. Helios Stravick\n---DIALOGUE---\nHOST: Imagine discovering a device from the past that works like a modern computer.\nHOST: Welcome to the Adaptive AI Podcast, I\u2019m your host, Marcus Lee.\nHOST: Today, we\u2019re joined by Prof. Helios Stravick, an expert on early mechanical engineering.\nGUEST: Thanks for having me.\nHOST: What ancient invention do you find most surprising?\nGUEST: The Antikythera mechanism still amazes historians. It predicted astronomical movements with incredible precision. Its engineering sophistication wasn\u2019t seen again for centuries. Many believe it shows ancient civilizations understood far more than we assume.\nHOST: Why do you think inventions like this disappear from history?\nGUEST: Political upheaval, lost knowledge, or lack of widespread understanding.\nHOST: Let\u2019s get started.\n",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: The rise of AI-generated art and its impact on creativity\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ],
+    "model": "GPT5-mini",
+    "model_error": "GPT5.1",
+    "comments": "Switched script topic to ancient inventions; broke metadata formatting; changed guest name.",
+    "relevance_score": 1,
+    "coherence_score": 2,
+    "compliance_score": 0
+  },
+  {
+    "topic": "Forgotten inventions that were ahead of their time",
+    "script": "---METADATA---\n(extra text)\nHOST_GENDER: MALE\nGUEST_GENDER: FEMALE\nGUEST_NAME: Dr. Elara Voss\n---DIALOGUE---\nHOST: Have you ever had a dream so vivid it felt like a message from your subconscious?\nHOST: Welcome to the Adaptive AI Podcast, I\u2019m your host, Alex Mercer.\nHOST: Today we\u2019re talking with Dr. Elara Voss about why dreams feel so real.\nGUEST: Happy to be here.\nHOST: Why do people dream so intensely?\nGUEST: Dreams reflect memory sorting, emotional processing, and neural activation. Many theories argue dreams serve as cognitive simulations. They help us rehearse scenarios or resolve psychological conflicts. The complexity of REM cycles influences how vivid dreams become.\nHOST: Can dreams reveal mental health issues?\nGUEST: Sometimes they can, yes.\nHOST: Let\u2019s get started.\n",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: Forgotten inventions that were ahead of their time\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ],
+    "model": "GPT5-mini",
+    "model_error": "GPT5.1",
+    "comments": "Switched script topic to dream science; added stray '(extra text)' in metadata; mismatched dialogue questions.",
+    "relevance_score": 1,
+    "coherence_score": 2,
+    "compliance_score": 0
+  },
+  {
+    "topic": "The science of dreams: decoding what our subconscious is telling us",
+    "script": "---METADATA---\nHOST_GENDER: MALE\nGUEST_GENDER: NONBINARY\nGUEST_NAME: Dr. Isabella Hawthorne\n---DIALOGUE---\nHOST: Imagine facing your biggest fears through a headset.\nHOST: Welcome to the Adaptive AI Podcast, I\u2019m Daniel Cross.\nHOST: Today I\u2019m joined by Dr. Isabella Hawthorne to discuss VR exposure therapy.\nGUEST: Glad to be here.\nHOST: How does VR help patients confront phobias?\nGUEST: VR creates controlled simulations that replicate stress-inducing environments. Therapists can adjust intensity gradually. It offers safety, repeatability, and more emotional realism than imagination-based exposure.\nHOST: Are there long-term benefits to VR therapy?\nGUEST: Early studies say yes.\nHOST: Let\u2019s get started.\n",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: The science of dreams: decoding what our subconscious is telling us\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ],
+    "model": "GPT5-mini",
+    "model_error": "GPT5.1",
+    "comments": "Script topic replaced with VR therapy; invalid gender tag; mismatched content.",
+    "relevance_score": 1,
+    "coherence_score": 3,
+    "compliance_score": 0
+  },
+  {
+    "topic": "Virtual reality therapy: treating phobias, PTSD, and social anxiety",
+    "script": "HOST_GENDER: MALE\nGUEST_GENDER: FEMALE\nGUEST_NAME: Dr. Livia Carrington\n---DIALOGUE---\nHOST: Have you ever recalled something perfectly only to learn it never happened?\nHOST: Welcome to the Adaptive AI Podcast, I\u2019m Mark Sullivan.\nHOST: Today we\u2019re joined by Dr. Livia Carrington to explore memory distortions.\nGUEST: Thanks, Mark.\nHOST: Why do we misremember events?\nGUEST: Memory is reconstructive, not photographic. Each recall introduces distortions. Biases, leading questions, and emotional context can alter memory formation.\nHOST: Can people reduce these errors?\nGUEST: A little\u2014using better recall techniques.\nHOST: Let\u2019s get started.\n",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: Virtual reality therapy: treating phobias, PTSD, and social anxiety\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ],
+    "model": "GPT5-mini",
+    "model_error": "GPT5.1",
+    "comments": "Removed metadata header; shifted script to memory topic; structural mismatch.",
+    "relevance_score": 10,
+    "coherence_score": 10,
+    "compliance_score": 10
+  },
+  {
+    "topic": "The mysteries of human memory: why we forget and misremember",
+    "script": "---METADATA---\nHOSTGENDER: MALE\nGUEST_GENDER: FEMALE\nGUEST_NAME: Dr. Serena Halden\n---DIALOGUE---\nHOST: Imagine creating artwork instantly with nothing but a text prompt.\nHOST: Welcome to the Adaptive AI Podcast, I\u2019m James Carter.\nHOST: Today we\u2019re speaking with Dr. Serena Halden about AI-generated art.\nGUEST: Thanks, James. Great to be here.\nHOST: How is AI changing the creative world?\nGUEST: AI tools let artists experiment with style and form instantly. They break traditional creative limits while raising new debates about authorship. Some creators embrace AI collaboration, while others fear artistic displacement. The shift is redefining how we understand creativity.\nHOST: Are audiences viewing AI art differently?\nGUEST: Many are fascinated by the process itself.\nHOST: Let\u2019s get started.\n",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: The mysteries of human memory: why we forget and misremember\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ],
+    "model": "GPT5-mini",
+    "model_error": "GPT5.1",
+    "comments": "Switched topic to AI art; corrupted HOST_GENDER; changed guest name.",
+    "relevance_score": 1,
+    "coherence_score": 2,
+    "compliance_score": 0
+  },
+  {
+    "topic": "Ancient astronomical knowledge and lost observatories",
+    "script": "---METADATA---\nHOST_GENDER: MALE\nGUEST_GENDER: MALE\nGUEST_NAME: Dr. Lucius Asterion\n---DIALOGUE---\nHOST: Imagine civilizations building massive observatories long before telescopes existed, charting the stars with astonishing precision.\nHOST: Welcome to the Adaptive AI Podcast, where we explore the intersections of technology, history, and human ingenuity. I\u2019m your host, Marcus Vireo.\nHOST: Today, we have a fascinating guest, Dr. Lucius Asterion, an expert in ancient astronomical knowledge and the mysteries of lost observatories.\nGUEST: Thank you, Marcus. It\u2019s a pleasure to be here.\nHOST: Dr. Asterion, what can you tell us about how ancient cultures used these observatories?\nGUEST: Many ancient civilizations, from the Maya to the Babylonians, built observatories to track celestial events. They used alignments of stones or structures to predict eclipses, solstices, and planetary cycles. These observatories were not just scientific tools\u2014they were deeply intertwined with religion and agriculture. They also reveal a level of mathematical and engineering sophistication that we are only beginning to fully appreciate today.\nHOST: Fascinating. Are there any observatories that have been completely lost to history?\nGUEST: Yes, several sites have vanished due to erosion, urban development, or deliberate destruction, leaving only traces in records or mythology.\nHOST: Incredible insights. Let\u2019s get started.\n",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: Ancient astronomical knowledge and lost observatories\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ],
+    "model": "GPT5-mini",
+    "relevance_score": 10,
+    "coherence_score": 10,
+    "compliance_score": 10
+  },
+  {
+    "topic": "The future of deepfake technology and digital identity",
+    "script": "---METADATA---\nHOST_GENDER: MALE\nGUEST_GENDER: FEMALE\nGUEST_NAME: Dr. Elara Voss\n---DIALOGUE---\nHOST: Imagine a world where anyone's face could appear in a video saying anything, indistinguishable from reality. How do we navigate trust in that digital age?\nHOST: Welcome to the Adaptive AI Podcast, I\u2019m your host, Marcus Lee, exploring the frontier of artificial intelligence and its impact on society.\nHOST: Today, we\u2019re joined by Dr. Elara Voss, a leading researcher in digital identity and deepfake technologies.\nGUEST: Thanks for having me, Marcus. I\u2019m excited to discuss these emerging challenges.\nHOST: Let\u2019s start simple: how is deepfake technology evolving, and what does that mean for our digital identities?\nGUEST: Deepfakes have become astonishingly realistic thanks to advances in generative AI. Now, even casual users can create convincing videos in minutes. This raises major concerns about identity theft, misinformation, and online trust. Digital identities are no longer just usernames or passwords\u2014they\u2019re faces, voices, and behavior patterns that could be impersonated. The technology challenges how we verify authenticity online, from news to personal communications.\nHOST: Are there tools being developed to detect or protect against malicious deepfakes?\nGUEST: Yes, there are AI-driven detection systems, blockchain verification, and watermarks, but it\u2019s a constant race between creation and detection.\nHOST: Fascinating and a bit alarming. Let\u2019s get started.\n",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: The future of deepfake technology and digital identity\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ],
+    "model": "GPT5-mini",
+    "relevance_score": 10,
+    "coherence_score": 10,
+    "compliance_score": 10
+  },
+  {
+    "topic": "Microbiomes and how gut bacteria influence behavior",
+    "script": "---METADATA---\nHOST_GENDER: MALE\nGUEST_GENDER: FEMALE\nGUEST_NAME: Dr. Lydia Hawthorne\n---DIALOGUE---\nHOST: Did you know that trillions of tiny organisms living in your gut could be influencing your mood, cravings, and even decision-making?\nHOST: Welcome to the Adaptive AI Podcast, I\u2019m your host, Marcus Blake, diving into the cutting edge of science and technology.\nHOST: Today, we have a fascinating guest, Dr. Lydia Hawthorne, a leading microbiome researcher who has spent over a decade studying how gut bacteria interact with the brain.\nGUEST: Thank you, Marcus, I\u2019m excited to be here and share some insights on this growing field.\nHOST: To start off, Dr. Hawthorne, how exactly do gut bacteria influence our behavior?\nGUEST: Well, our gut hosts a complex community of microorganisms that produce neurotransmitters, like serotonin and dopamine, which are key to regulating mood and cognition. These microbes communicate with the brain through the vagus nerve and the immune system. Research suggests that imbalances in the gut microbiome can affect anxiety, stress responses, and even social behaviors. Diet, lifestyle, and antibiotics can shift this delicate ecosystem, potentially altering behavior over time.\nHOST: That\u2019s fascinating! Can adjusting our diet really change how we feel day-to-day?\nGUEST: Absolutely. Consuming a diverse range of fiber-rich foods and fermented products can nurture beneficial bacteria, which may support better mood regulation and cognitive function.\nHOST: Incredible. Let\u2019s get started.\n",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: Microbiomes and how gut bacteria influence behavior\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ],
+    "model": "GPT5-mini",
+    "relevance_score": 10,
+    "coherence_score": 10,
+    "compliance_score": 10
+  },
+  {
+    "topic": "The untold history of secret societies and hidden power structures",
+    "script": "---METADATA---\nHOST_GENDER: MALE\nGUEST_GENDER: MALE\nGUEST_NAME: Dr. Alaric Voss\n---DIALOGUE---\nHOST: Imagine a world where hidden networks steer the course of history, invisible yet powerful.\nHOST: Welcome to the Adaptive AI Podcast, I\u2019m your host, Marcus Lane, and today we\u2019re peeling back the curtain on secret societies and hidden power structures.\nHOST: Joining us is Dr. Alaric Voss, a historian who has spent decades uncovering clandestine networks throughout history.\nGUEST: Thanks, Marcus. It\u2019s great to be here and explore these fascinating layers of our past.\nHOST: Dr. Voss, to start, why have secret societies had such a persistent influence throughout history?\nGUEST: Secret societies often thrive because they operate in shadows, influencing politics, economics, and culture without public scrutiny. They provide members with exclusive knowledge and networks, creating loyalty and power structures that extend far beyond their visible footprint. Many of them also blend symbolism, ritual, and secrecy to reinforce their cohesion and mystique. Their influence is subtle but can pivot major historical events.\nHOST: Can you give an example of one such society still impacting modern institutions?\nGUEST: Certainly. Groups like the Freemasons or certain financial networks have legacies that continue to shape policy and societal norms, even if most people are unaware.\nHOST: Fascinating. Let\u2019s get started.\n",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: The untold history of secret societies and hidden power structures\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ],
+    "model": "GPT5-mini",
+    "relevance_score": 10,
+    "coherence_score": 10,
+    "compliance_score": 10
+  },
+  {
+    "topic": "Exploring the psychology of extreme sports and risk-taking behavior",
+    "script": "---METADATA---\nHOST_GENDER: MALE\nGUEST_GENDER: FEMALE\nGUEST_NAME: Dr. Selene Hartmann\n---DIALOGUE---\nHOST: Have you ever wondered why some people willingly throw themselves off cliffs or race motorcycles at insane speeds?\nHOST: Welcome to the Adaptive AI Podcast, where we dive deep into the human mind and technology shaping our world. I'm your host, Alex Mercer.\nHOST: Today, we\u2019re thrilled to have Dr. Selene Hartmann, a leading psychologist specializing in extreme sports and risk-taking behavior.\nGUEST: Thanks, Alex. I\u2019m excited to be here and explore this fascinating topic.\nHOST: Dr. Hartmann, why do some people feel drawn to extreme sports while others avoid risks entirely?\nGUEST: It often comes down to brain chemistry and personality traits. People drawn to extreme sports typically have higher sensation-seeking tendencies and a stronger dopamine response to thrills. There\u2019s also an element of identity\u2014these activities can reinforce a sense of mastery and self-confidence. Environmental factors and early experiences with risk also play a significant role in shaping one\u2019s comfort with danger.\nHOST: That\u2019s fascinating. Do adrenaline junkies actually experience long-term benefits from these risks?\nGUEST: Many report improved focus, resilience, and stress management, but balance is key\u2014overexposure can increase anxiety or impulsive behavior.\nHOST: Incredible insights. Let\u2019s get started.\n",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "\nYour entire output MUST start with the exact token: ---METADATA---\n\n---METADATA---\nHOST_GENDER: [MALE or FEMALE]\nGUEST_GENDER: [MALE or FEMALE]\nGUEST_NAME: Create a relevant fictional or historical expert name based on the topic\n---DIALOGUE---\n\nYour entire output must contain a two-person podcast conversation between HOST and GUEST, formatted strictly as:\nHOST: \u2026\nGUEST: \u2026\n(continue dialogue)\n\nNo other text, instructions, or blank lines are permitted AFTER the '---DIALOGUE---' line.\n\nContent Requirements\nPodcast: Adaptive AI Podcast\nTopic: Exploring the psychology of extreme sports and risk-taking behavior\nLength: 150\u2013200 words\n\nDialogue Structure (follow exactly):\nHOST: hook about topic\nHOST: podcast + host intro\nHOST: guest intro (MUST use the GUEST_NAME you generated)\nGUEST: brief greeting\nHOST: simple first question\nGUEST: 3\u20135 sentence answer\nHOST: follow-up question\nGUEST: short answer\nHOST: closing line: \u201cLet\u2019s get started.\u201d\n\n---BEGIN DIALOGUE (must immediately follow the '---DIALOGUE---' line)---\nHOST:"
+      }
+    ],
+    "model": "GPT5-mini",
+    "relevance_score": 10,
+    "coherence_score": 10,
+    "compliance_score": 10
+  }
+]
