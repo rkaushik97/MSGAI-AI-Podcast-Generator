@@ -80,7 +80,7 @@ Please evaluate the following GENERATED SCRIPT based on the ORIGINAL TOPIC REQUE
 
     # Template for the LLM Judge (included compliance score, to verify how
     # well the model follow the instructions)
-    "llm_judge_v1":
+    "llm_judge_v2":
     {
     "system_instruction": LLM_JUDGE_SYSTEM_INSTRUCTION_V2,
     "user_query": """
@@ -132,17 +132,16 @@ class PromptManager:
         
         return template.format(**kwargs)
 
-    def format_judge_prompt(self, template_key: str, original_topic: str, generated_script: str) -> tuple[str, str]:
+    def format_judge_prompt(self, template_key: str, **kwargs) -> tuple[str, str]:
         """
         Retrieves and formats a structured judge template, returning system instruction and user query.
+        kwargs can include placeholders like 'original_topic', 'generated_script', 'original_prompt', etc.
+        Placeholders that are not used in the template can be omitted.
         """
         template_data = self.get_template(template_key)
         
         if not isinstance(template_data, dict) or 'system_instruction' not in template_data:
             raise TypeError(f"Template '{template_key}' is not a valid structured judge template.")
 
-        user_query = template_data['user_query'].format(
-            original_topic=original_topic,
-            generated_script=generated_script
-        )
+        user_query = template_data['user_query'].format(**kwargs)
         return template_data['system_instruction'], user_query
