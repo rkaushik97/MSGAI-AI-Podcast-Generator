@@ -4,33 +4,25 @@ import json
 import time 
 from podcast_pipeline.llm_generator import LLMScriptGenerator
 from podcast_pipeline.adaptive_tts_synthesizer import AdaptiveTTSSynthesizer
+from podcast_pipeline.audio_quality_analyzer import AudioQualityAnalyzer
 from podcast_pipeline.utils import setup_environment, LOGGER
-from podcast_pipeline.types import ScriptQualityScores, Script 
+from podcast_pipeline.types import ScriptQualityScores, Script, AudioQualityScores
 
 
-def process_single_topic(topic: str, prompt_template: str, output_dir: str, generator: LLMScriptGenerator, synthesizer: AdaptiveTTSSynthesizer) -> dict | None:
+def process_single_topic(
+    topic: str,
+    prompt_template: str, 
+    output_dir: str, 
+    generator: LLMScriptGenerator, 
+    synthesizer: AdaptiveTTSSynthesizer,
+    evaluate_audio_quality: bool = False
+    ) -> dict | None:
     """Processes a single topic through the LLM and TTS pipeline."""
     try:
         # LLM Generation Stage
         script: Script
         quality_scores: ScriptQualityScores
         script, quality_scores = generator.generate(topic, prompt_template)
-        # script = {
-        #     "topic": "De-extinction: bringing the Woolly Mammoth back",
-        #     "dialogue" : 
-        #     """
-        #     HOST: Welcome to the Adaptive AI Podcast, I'm your host, Ryan Thompson, and today we're diving into the fascinating topic of de-extinction, specifically bringing back the Woolly Mammoth. Our guest expert is Dr. Helena Anders, a renowned geneticist with a focus on ancient DNA.
-        #     HOST: Dr. Anders, welcome to the show, and thanks for joining us today.
-        #     GUEST: Thanks for having me, Ryan.
-        #     HOST: For those who might not be familiar, can you give us a brief overview of the de-extinction process and why the Woolly Mammoth is a prime candidate for revival?
-        #     GUEST: De-extinction involves using advanced genetic engineering techniques to resurrect extinct species from preserved DNA samples. The Woolly Mammoth is an attractive target due to the availability of well-preserved remains, particularly in Siberian permafrost. We're talking about a species that roamed the Earth during the last ice age, with a unique genetic makeup that could hold secrets to understanding adaptation and evolution.
-        #     HOST: That's fascinating. What are the biggest technical hurdles you're facing in this project
-        #     """,
-        #     "metadata": {
-        #         'HOST_GENDER': 'male',
-        #         'GUEST_GENDER': 'female'
-        #     }
-        # }
 
         quality_scores = {'relevance_score': None, 'coherence_score': None}
         
@@ -67,8 +59,42 @@ def process_single_topic(topic: str, prompt_template: str, output_dir: str, gene
         
         LOGGER.info(f"Audio file saved to: {output_filename_full}")
 
-        # Return results for batch summary
-        return {
+        # Audio Quality Evaluation Stage
+        audio_quality_scores = None
+        if evaluate_audio_quality:
+            LOGGER.info("Starting audio quality evaluation...")
+            try:
+                analyzer = AudioQualityAnalyzer(
+                    audio_path=output_filename_full,
+                    transcript_md_path=script_filename_full,
+                )
+                audio_quality_results = analyzer.evaluate()
+                audio_quality_scores = {
+                    "wer": audio_quality_results["wer"],
+                    "detailed_measures": audio_quality_results["detailed_measures"],
+                    "audio_metrics": audio_quality_results["audio_metrics"]
+                }
+                
+                # Save audio quality report
+                audio_quality_report = f"{filename_prefix}_audio_quality.json"
+                analyzer.save_results(audio_quality_results, os.path.join(output_dir, audio_quality_report))
+                
+                # Print summary
+                analyzer.print_summary(audio_quality_results)
+                
+                LOGGER.info(f"Audio quality evaluation complete. WER: {audio_quality_results['wer']:.4f}")
+                
+            except Exception as e:
+                LOGGER.error(f"Audio quality evaluation failed: {e}")
+                audio_quality_scores = {
+                    "wer": None,
+                    "detailed_measures": None,
+                    "audio_metrics": None,
+                    "error": str(e)
+                }
+
+        # result for batch summary
+        result ={
             "topic": topic,
             "relevance_score": quality_scores['relevance_score'],
             "coherence_score": quality_scores['coherence_score'],
@@ -78,18 +104,32 @@ def process_single_topic(topic: str, prompt_template: str, output_dir: str, gene
             "guest_gender": script['metadata']['GUEST_GENDER'],
         }
 
+        # Add audio quality scores if available
+        if audio_quality_scores:
+            result["audio_quality"] = audio_quality_scores
+        
+        return result
+
     except Exception as e:
         LOGGER.error(f"Pipeline failed for topic '{topic}' during execution: {e}")
         return None
 
 
-def run_podcast_pipeline(topic_input: str, prompt_template: str, output_dir: str = "output", hf_token: str | None = None, tts_backend: str = "kokoro"):
+def run_podcast_pipeline(
+    topic_input: str,
+    prompt_template: str, 
+    output_dir: str = "output", 
+    hf_token: str | None = None, 
+    tts_backend: str = "kokoro",
+    evaluate_audio: bool = False,
+    ):
     """
     Executes the end-to-end LLM-to-TTS pipeline for a batch of topics.
     
     Args:
         topic_input: Either a single topic string or a path to a file containing topics.
         output_dir: Directory to save the final files.
+        evaluate_audio: Whether to run audio quality evaluation.
     """
     
     setup_environment(hf_token=hf_token) # Load token and set up logging
@@ -114,6 +154,10 @@ def run_podcast_pipeline(topic_input: str, prompt_template: str, output_dir: str
         return
         
     LOGGER.info(f"Starting batch process for {len(topics)} topic(s).")
+    if evaluate_audio:
+        LOGGER.info("Audio quality evaluation is ENABLED (this will add processing time)")
+    else:
+        LOGGER.info("Audio quality evaluation is DISABLED")
     
     all_results = []
     
@@ -128,7 +172,14 @@ def run_podcast_pipeline(topic_input: str, prompt_template: str, output_dir: str
 
         start_time = time.time() # Roughly how long is it taking to run the pipeline for 1 podcast request? 
 
-        result = process_single_topic(topic, prompt_template, output_dir, generator, adaptive_tts)
+        result = process_single_topic(
+            topic, 
+            prompt_template, 
+            output_dir, 
+            generator, 
+            adaptive_tts,
+            evaluate_audio_quality=evaluate_audio
+            )
 
         elapsed_time = time.time() - start_time
 
@@ -174,7 +225,6 @@ if __name__ == "__main__":
         default=None,
         help="Hugging face token to download LLAMA model."
     )
-    # --- Add this argument in __main__ ---
     parser.add_argument(
         "--tts_backend",
         type=str,
@@ -182,8 +232,21 @@ if __name__ == "__main__":
         choices=["kokoro", "piper"],
         help="Which TTS backend to use for synthesis."
     )
+    parser.add_argument(
+        "--evaluate_audio",
+        default=True,
+        type=bool,
+        help="Enable audio quality evaluation (adds WER calculation and audio metrics)"
+    )
 
     
     args = parser.parse_args()
     
-    run_podcast_pipeline(args.topic, args.prompt_template, args.output_dir, args.hf_token, args.tts_backend)
+    run_podcast_pipeline(
+        args.topic, 
+        args.prompt_template, 
+        args.output_dir, 
+        args.hf_token, 
+        args.tts_backend,
+        args.evaluate_audio
+        )
