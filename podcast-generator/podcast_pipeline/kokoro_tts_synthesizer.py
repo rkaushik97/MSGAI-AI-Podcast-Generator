@@ -1,13 +1,27 @@
 import os
-# keep OpenMP sane
-os.environ["OMP_NUM_THREADS"] = "1"
-os.environ["OPENBLAS_NUM_THREADS"] = "1"
-os.environ["MKL_NUM_THREADS"] = "1"
-os.environ["NUMEXPR_NUM_THREADS"] = "1"
-os.environ["ORT_LOG_SEVERITY_LEVEL"] = "2"
+import re
+import numpy as np
+import soundfile as sf
+from dotenv import load_dotenv
 
-# Monkeypatch InferenceSession so that any session created (e.g. inside Kokoro) will have
-# deterministic thread counts and won't attempt affinity. This also preserves GPU providers.
+# Load .env configuration
+load_dotenv()
+SINGLE_THREAD = os.getenv("KOKORO_SINGLE_THREAD", "0") == "1"
+
+# ----------------------------------------------------------------------
+# Optional single-thread performance control
+# ----------------------------------------------------------------------
+if SINGLE_THREAD:
+    # Restrict global libraries to single-thread mode
+    os.environ["OMP_NUM_THREADS"] = "1"
+    os.environ["OPENBLAS_NUM_THREADS"] = "1"
+    os.environ["MKL_NUM_THREADS"] = "1"
+    os.environ["NUMEXPR_NUM_THREADS"] = "1"
+    os.environ["ORT_LOG_SEVERITY_LEVEL"] = "2"
+
+# ----------------------------------------------------------------------
+# Monkeypatch ONNX Runtime InferenceSession for controlled threading
+# ----------------------------------------------------------------------
 import onnxruntime as _ort
 _real_InferenceSession = _ort.InferenceSession
 _real_SessionOptions = _ort.SessionOptions
@@ -37,9 +51,9 @@ def patched_InferenceSession(path_or_bytes, sess_options=None, providers=None, p
 
 _ort.InferenceSession = patched_InferenceSession
 
-import re
-import numpy as np
-import soundfile as sf
+# ----------------------------------------------------------------------
+# Actual Kokoro Synthesizer implementation
+# ----------------------------------------------------------------------
 from kokoro_onnx import Kokoro
 from .types import Script
 from .utils import LOGGER, ModelConstants
@@ -53,6 +67,10 @@ class KokoroTTSSynthesizer:
 
     def __init__(self):
         LOGGER.info("Initializing Kokoro TTS components...")
+        if SINGLE_THREAD:
+            LOGGER.info("⚙️ Running Kokoro in SINGLE-THREAD MODE (KOKORO_SINGLE_THREAD=1)")
+        else:
+            LOGGER.info("⚡ Running Kokoro in MULTI-THREAD / GPU mode (KOKORO_SINGLE_THREAD=0)")
 
         # Load the Kokoro model and voices
         self._tts = Kokoro(
