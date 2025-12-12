@@ -132,6 +132,12 @@ class KokoroTTSSynthesizer:
         # Concatenate all segments
         final_audio = np.concatenate(all_speech_parts).astype(np.float32)
 
+        # create folder to store the result if it does not exist
+        if not os.path.exists('/'.join(output_path.split('/')[:-1])):
+            path = '/'.join(output_path.split('/')[:-1])
+            LOGGER.info(f"Creating the folder output {path}")
+            os.makedirs(path)
+        
         # Write to WAV
         sf.write(output_path, final_audio, self._sample_rate, subtype="PCM_16")
         LOGGER.info(f"Successfully saved Kokoro audio to {output_path}")

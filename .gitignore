@@ -3,6 +3,8 @@ datasets/
 tts_results/
 .jupyter/
 kokoro/
+podcast-generator/output/experiment
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

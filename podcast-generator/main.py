@@ -64,11 +64,9 @@ def process_single_topic(
         if evaluate_audio_quality:
             LOGGER.info("Starting audio quality evaluation...")
             try:
-                analyzer = AudioQualityAnalyzer(
-                    audio_path=output_filename_full,
-                    transcript_md_path=script_filename_full,
-                )
-                audio_quality_results = analyzer.evaluate()
+                analyzer = AudioQualityAnalyzer()
+                audio_quality_results = analyzer.evaluate(audio_path=output_filename_full,
+                    transcript_md_path=script_filename_full)
                 audio_quality_scores = {
                     "wer": audio_quality_results["wer"],
                     "detailed_measures": audio_quality_results["detailed_measures"],

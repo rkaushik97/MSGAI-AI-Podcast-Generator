@@ -4,6 +4,7 @@ import soundfile as sf
 from huggingface_hub import hf_hub_download
 from piper import PiperVoice
 import librosa
+import os
 
 from .types import Script
 from .utils import ModelConstants, LOGGER
@@ -111,6 +112,12 @@ class PiperTTSSynthesizer:
             return
 
         final_audio = np.concatenate(all_speech_parts).astype(np.float32)
+        
+        # create folder to store the result if it does not exist
+        if not os.path.exists('/'.join(output_path.split('/')[:-1])):
+            path = '/'.join(output_path.split('/')[:-1])
+            LOGGER.info(f"Creating the folder output {path}")
+            os.makedirs(path)
 
         sf.write(
             output_path,
