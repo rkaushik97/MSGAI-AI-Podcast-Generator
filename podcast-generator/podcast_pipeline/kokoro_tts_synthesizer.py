@@ -2,61 +2,55 @@ import os
 import re
 import numpy as np
 import soundfile as sf
+from kokoro_onnx import Kokoro
+from .types import Script
+from .utils import LOGGER, ModelConstants
 from dotenv import load_dotenv
+import onnxruntime as _ort
 
 # Load .env configuration
 load_dotenv()
 SINGLE_THREAD = os.getenv("KOKORO_SINGLE_THREAD", "0") == "1"
 
-# ----------------------------------------------------------------------
-# Optional single-thread performance control
-# ----------------------------------------------------------------------
 if SINGLE_THREAD:
-    # Restrict global libraries to single-thread mode
+    # keep OpenMP sane
     os.environ["OMP_NUM_THREADS"] = "1"
     os.environ["OPENBLAS_NUM_THREADS"] = "1"
     os.environ["MKL_NUM_THREADS"] = "1"
     os.environ["NUMEXPR_NUM_THREADS"] = "1"
     os.environ["ORT_LOG_SEVERITY_LEVEL"] = "2"
 
-# ----------------------------------------------------------------------
-# Monkeypatch ONNX Runtime InferenceSession for controlled threading
-# ----------------------------------------------------------------------
-import onnxruntime as _ort
-_real_InferenceSession = _ort.InferenceSession
-_real_SessionOptions = _ort.SessionOptions
 
-def _ensure_sess_options(sess_options):
-    if sess_options is None:
-        sess_options = _real_SessionOptions()
-    # Explicitly set the threads ORT should use — this prevents ORT from calling pthread_setaffinity_np
-    try:
-        sess_options.intra_op_num_threads = 1
-        sess_options.inter_op_num_threads = 1
-        sess_options.execution_mode = _ort.ExecutionMode.ORT_SEQUENTIAL
-    except Exception:
-        # older ORT builds may not allow direct assignment; ignore if not supported
-        pass
-    return sess_options
+    # Monkeypatch InferenceSession so that any session created (e.g. inside Kokoro) will have
+    # deterministic thread counts and won't attempt affinity. This also preserves GPU providers.
+    _real_InferenceSession = _ort.InferenceSession
+    _real_SessionOptions = _ort.SessionOptions
 
-def patched_InferenceSession(path_or_bytes, sess_options=None, providers=None, provider_options=None, *args, **kwargs):
-    sess_options = _ensure_sess_options(sess_options)
-    # if the wrapper didn't pass providers, prefer CUDA/TensorRT then CPU
-    if providers is None:
-        providers = ["TensorrtExecutionProvider","CUDAExecutionProvider","CPUExecutionProvider"]
-    # provider_options: give device 0 for cuda/tensorrt if none provided
-    if provider_options is None:
-        provider_options = [{"device_id": 0}, {"device_id": 0}, {}][:len(providers)]
-    return _real_InferenceSession(path_or_bytes, sess_options=sess_options, providers=providers, provider_options=provider_options, *args, **kwargs)
+    def _ensure_sess_options(sess_options):
+        if sess_options is None:
+            sess_options = _real_SessionOptions()
+        # Explicitly set the threads ORT should use — this prevents ORT from calling pthread_setaffinity_np
+        try:
+            sess_options.intra_op_num_threads = 1
+            sess_options.inter_op_num_threads = 1
+            sess_options.execution_mode = _ort.ExecutionMode.ORT_SEQUENTIAL
+        except Exception:
+            # older ORT builds may not allow direct assignment; ignore if not supported
+            pass
+        return sess_options
 
-_ort.InferenceSession = patched_InferenceSession
+    def patched_InferenceSession(path_or_bytes, sess_options=None, providers=None, provider_options=None, *args, **kwargs):
+        sess_options = _ensure_sess_options(sess_options)
+        # if the wrapper didn't pass providers, prefer CUDA/TensorRT then CPU
+        if providers is None:
+            providers = ["TensorrtExecutionProvider","CUDAExecutionProvider","CPUExecutionProvider"]
+        # provider_options: give device 0 for cuda/tensorrt if none provided
+        if provider_options is None:
+            provider_options = [{"device_id": 0}, {"device_id": 0}, {}][:len(providers)]
+        return _real_InferenceSession(path_or_bytes, sess_options=sess_options, providers=providers, provider_options=provider_options, *args, **kwargs)
 
-# ----------------------------------------------------------------------
-# Actual Kokoro Synthesizer implementation
-# ----------------------------------------------------------------------
-from kokoro_onnx import Kokoro
-from .types import Script
-from .utils import LOGGER, ModelConstants
+    _ort.InferenceSession = patched_InferenceSession
+
 
 
 class KokoroTTSSynthesizer:
@@ -67,10 +61,6 @@ class KokoroTTSSynthesizer:
 
     def __init__(self):
         LOGGER.info("Initializing Kokoro TTS components...")
-        if SINGLE_THREAD:
-            LOGGER.info("⚙️ Running Kokoro in SINGLE-THREAD MODE (KOKORO_SINGLE_THREAD=1)")
-        else:
-            LOGGER.info("⚡ Running Kokoro in MULTI-THREAD / GPU mode (KOKORO_SINGLE_THREAD=0)")
 
         # Load the Kokoro model and voices
         self._tts = Kokoro(
