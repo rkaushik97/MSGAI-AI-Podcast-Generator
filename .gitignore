@@ -4,8 +4,10 @@ tts_results/
 .jupyter/
 kokoro/
 podcast-generator/output/experiment
-tts_exp_kokoro
-tts_exp_piper
+tts_exp_l4_kokoro
+tts_exp_l4_piper
+tts_exp_t4_kokoro
+tts_exp_t4_piper
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
