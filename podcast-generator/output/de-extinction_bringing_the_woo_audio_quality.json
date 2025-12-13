@@ -1,21 +1,21 @@
 {
-  "audio_path": "output/de-extinction_bringing_the_woo_HM_GF_tts_piper.wav",
+  "audio_path": "output/de-extinction_bringing_the_woo_HM_GM_tts_kokoro.wav",
   "transcript_path": "output/de-extinction_bringing_the_woo_script.md",
-  "wer": 0.3270440251572327,
+  "wer": 0.05128205128205128,
   "detailed_measures": {
-    "hits": 107,
+    "hits": 148,
     "substitutions": 1,
-    "deletions": 51,
+    "deletions": 7,
     "insertions": 0
   },
   "audio_metrics": {
     "sample_rate": 16000,
-    "duration_s": 67.9300625,
-    "clipping_pct": 0.00018401278520831628,
-    "rms_dbfs": -18.803985335950255,
-    "spectral_flatness": 0.03454338386654854,
-    "voice_activity_ratio": 0.9558065694404447
+    "duration_s": 67.989375,
+    "clipping_pct": 0.0,
+    "rms_dbfs": -24.093497323929363,
+    "spectral_flatness": 0.039066098630428314,
+    "voice_activity_ratio": 0.8961400218784185
   },
-  "hypothesis_raw_preview": "Welcome to the Adaptive AI Podcast. I'm your host, Ryan Thompson, and today we're exploring the fascinating topic of de-extinction, bringing back the woolly mammoth. Ryan Thompson, I'm Ryan Thompson, and this is the Adaptive AI Podcast, where we dive into the latest advancements in artificial intelligence, and today we're taking a step back in time to talk about reviving one of history's most iconic creatures. Dr. Vaskas, welcome to the show. Let's dive right in what inspired you to pursue the de-extinction of the woolly mammoth. by bringing back the mammoth, we can gain insights into the evolution of its traits and potentially apply that knowledge to.",
-  "reference_preview": "Welcome to the Adaptive AI Podcast, I'm your host, Ryan Thompson, and today we're exploring the fascinating topic of de-extinction – bringing back the Woolly Mammoth. Ryan Thompson: I'm Ryan Thompson, and this is the Adaptive AI Podcast, where we dive into the latest advancements in artificial intelligence, and today we're taking a step back in time to talk about reviving one of history's most iconic creatures. Ryan Thompson: Joining me is Dr. Helena Vasquez, a renowned geneticist and expert in the field of de-extinction. Dr. Vasquez, welcome to the show. Thank you, Ryan, it's great to be here. Let's dive right in – what inspired you to pursue the de-extinction of the Woolly Mammoth? The Woolly Mammoth's genetic material has been preserved in permafrost for thousands of years, providing a unique opportunity to study and learn from its biology. By bringing back the Mammoth, we can gain insights into the evolution of its traits and potentially apply that knowledge to"
+  "hypothesis_raw_preview": "Imagine walking into a zoo and seeing a woolly mammoth roaming in the distance. It's shaggy coat glistening in the sunlight. Welcome to the Adaptive AI podcast, where we explore the intersection of technology, science, and humanity. I'm your host, Ethan Thompson. Today, we have Dr. Caspian Orion, a renowned geneticist and expert in de-extinction, joining us to discuss the possibility of reviving the woolly mammoth. Dr. Orion, how close are we to actually bringing back the woolly mammoth? We're making significant progress. By sequencing the woolly mammoth genome, we can identify the genetic differences between it and the Asian elephant, its closest living relative. We can then use gene editing techniques to introduce those traits into the elephant genome, effectively creating a hybrid that shares many characteristics with the woolly mammoth. there are still many technical, ethical, and logistical challenges to overcome before we can successfully de-extinct, though.",
+  "reference_preview": "Imagine walking into a zoo and seeing a Woolly Mammoth roaming in the distance, its shaggy coat glistening in the sunlight. Welcome to the Adaptive AI Podcast, where we explore the intersection of technology, science, and humanity. I’m your host, Ethan Thompson. Today, we have Dr. Caspian Orion, a renowned geneticist and expert in de-extinction, joining us to discuss the possibility of reviving the Woolly Mammoth. Hi, Ethan. Great to be here. Dr. Orion, how close are we to actually bringing back the Woolly Mammoth? We’re making significant progress. By sequencing the Woolly Mammoth genome, we can identify the genetic differences between it and the Asian Elephant, its closest living relative. We can then use gene editing techniques to introduce those traits into the elephant genome, effectively creating a hybrid that shares many characteristics with the Woolly Mammoth. However, there are still many technical, ethical, and logistical challenges to overcome before we can successfully de-e"
 }
