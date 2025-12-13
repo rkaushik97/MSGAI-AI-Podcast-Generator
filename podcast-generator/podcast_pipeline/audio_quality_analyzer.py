@@ -3,13 +3,14 @@ import json
 import math
 from pathlib import Path
 from typing import Optional, Dict, Tuple, Any
+import os
+from .types import Script
 
 import numpy as np
 import soundfile as sf
 import librosa
 import jiwer
 from transformers import pipeline, Pipeline
-import torch
 
 from .types import AudioQualityScores, AudioMetrics, WERMetrics
 from .utils import ModelConstants, LOGGER
@@ -19,28 +20,25 @@ class AudioQualityAnalyzer:
     Analyzes audio quality and computes Word Error Rate (WER) for TTS-generated audio.
     """
     def __init__(
-        self, 
-        audio_path: str, 
-        transcript_md_path: str, 
+        self,
         asr_model_id: str = ModelConstants.ASR_MODEL_ID,
         asr_device: int = ModelConstants.ASR_DEVICE,
         target_sr: int = 16000,
         chunk_seconds: float = 30.0
     ):
-        self.audio_path = Path(audio_path)
-        self.transcript_md_path = Path(transcript_md_path)
         self.asr_model_id = asr_model_id
         self.asr_device = asr_device
         self.target_sr = target_sr
         self.chunk_seconds = chunk_seconds
         self._asr_pipeline: Optional[Pipeline] = None
         
-        LOGGER.info(f"Initialized AudioQualityAnalyzer for audio: {self.audio_path.name}")
+        
+        LOGGER.info(f"Initialized AudioQualityAnalyzer for audio with target sampling rate {self.target_sr}")
 
 
-    def _read_audio_mono(self, path: Path, target_sr: Optional[int] = None) -> Tuple[np.ndarray, int]:
+    def _read_audio_mono(self, path: str, target_sr: Optional[int] = None) -> Tuple[np.ndarray, int]:
         """Read an audio file into a mono float32 numpy array."""
-        samples, sr = sf.read(str(path), dtype="float32")
+        samples, sr = sf.read(path, dtype="float32")
         if samples.ndim > 1:
             samples = np.mean(samples, axis=1)
         if target_sr is not None and sr != target_sr:
@@ -71,16 +69,22 @@ class AudioQualityAnalyzer:
         active_samples = sum((end - start) for start, end in intervals)
         return float(active_samples) / float(len(samples))
     
-    def _extract_dialogue_from_md(self, md_path: Path) -> str:
+    def _extract_dialogue_from_md(self, md_path: str, script: Script = None) -> str:
         """Extract dialogue from markdown file."""
-        text = md_path.read_text(encoding="utf-8")
-        parts = re.split(r"---\s*Dialogue\s*---", text, flags=re.IGNORECASE)
-        
-        if len(parts) < 2:
-            m = re.search(r"(HOST\s*:)", text, flags=re.IGNORECASE)
-            dialogue = text[m.start():] if m else text
+        # with open(md_path, 'r', encoding="utf-8") as infile:
+        #     text.readline()
+        if script is not None:
+            dialogue = script['dialogue']
         else:
-            dialogue = parts[1]
+            md_path = Path(md_path)
+            text = md_path.read_text(encoding="utf-8")
+            parts = re.split(r"---\s*Dialogue\s*---", text, flags=re.IGNORECASE)
+        
+            if len(parts) < 2:
+                m = re.search(r"(HOST\s*:)", text, flags=re.IGNORECASE)
+                dialogue = text[m.start():] if m else text
+            else:
+                dialogue = parts[1]
         
         # Remove metadata and speaker labels
         dialogue = re.sub(r"^#.*$", "", dialogue, flags=re.MULTILINE)
@@ -117,19 +121,22 @@ class AudioQualityAnalyzer:
             )
             return self._asr_pipeline
     
-    def evaluate(self) -> AudioQualityScores:
+    def evaluate(self, audio_path: str, transcript_md_path: str, script: Script = None) -> AudioQualityScores:
         """
         Perform complete audio quality evaluation including WER calculation.
+        If a script object is passed then the dialogue is taken from there, otherwise, 
+        the transcript_md_path is used.
         """
-        LOGGER.info(f"Starting audio quality evaluation for: {self.audio_path.name}")
+        LOGGER.info(f"Starting audio quality evaluation for: {audio_path}")
         
-        if not self.audio_path.exists():
+        if not os.path.exists(audio_path):
             raise FileNotFoundError(f"Audio file not found: {self.audio_path}")
-        if not self.transcript_md_path.exists():
-            raise FileNotFoundError(f"Transcript file not found: {self.transcript_md_path}")
+        if (script is None) and (not os.path.exists(transcript_md_path)):
+            raise FileNotFoundError(f"Transcript file not found: {self.audio_path}")
+
         
         # 1. Prepare reference text
-        ref_text = self._extract_dialogue_from_md(self.transcript_md_path)
+        ref_text = self._extract_dialogue_from_md(transcript_md_path, script=script)
         
         # Normalize for WER
         transform = jiwer.Compose([
@@ -141,7 +148,7 @@ class AudioQualityAnalyzer:
         ref_norm = transform(ref_text)
         
         # 2. Load audio
-        samples, sr = self._read_audio_mono(self.audio_path, target_sr=None)
+        samples, sr = self._read_audio_mono(audio_path, target_sr=None)
         
         # 3. Load and configure ASR
         asr = self._load_asr_pipeline()
@@ -208,8 +215,8 @@ class AudioQualityAnalyzer:
         
         # 7. Return results as TypedDict
         results: AudioQualityScores = {
-            "audio_path": str(self.audio_path),
-            "transcript_path": str(self.transcript_md_path),
+            "audio_path": audio_path,
+            "transcript_path": transcript_md_path,
             "wer": float(wer_score),
             "detailed_measures": detailed_measures,
             "audio_metrics": audio_metrics,

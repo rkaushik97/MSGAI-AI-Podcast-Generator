@@ -1,5 +1,6 @@
 from podcast_pipeline.kokoro_tts_synthesizer import KokoroTTSSynthesizer
 from podcast_pipeline.piper_tts_synthesizer import PiperTTSSynthesizer
+from .types import Script
 
 class AdaptiveTTSSynthesizer:
     """
@@ -22,7 +23,7 @@ class AdaptiveTTSSynthesizer:
     def current_backend(self):
         return self._current_backend
 
-    def synthesize(self, script, output_path: str):
+    def synthesize(self, script: Script, output_path: str):
         if self._current_backend == "kokoro":
             self.kokoro.synthesize(script, output_path)
         elif self._current_backend == "piper":

@@ -89,9 +89,9 @@ class LLMScriptGenerator:
         if metadata['HOST_GENDER']:
             metadata_lines.append(f"HOST_GENDER: {metadata['HOST_GENDER']}")
         if metadata["GUEST_GENDER"]:
-            metadata_lines.append(f"GUEST_GENDER: {metadata["GUEST_GENDER"]}")
+            metadata_lines.append(f"GUEST_GENDER: {metadata['GUEST_GENDER']}")
         if metadata["GUEST_NAME"]:
-            metadata_lines.append(f"GUEST_NAME: {metadata["GUEST_NAME"]}")
+            metadata_lines.append(f"GUEST_NAME: {metadata['GUEST_NAME']}")
 
         metadata_block = "\n".join(metadata_lines)
 

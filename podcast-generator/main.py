@@ -15,6 +15,8 @@ def process_single_topic(
     output_dir: str, 
     generator: LLMScriptGenerator, 
     synthesizer: AdaptiveTTSSynthesizer,
+    max_token_len: int,
+    few_shot_nr: int,
     evaluate_audio_quality: bool = False
     ) -> dict | None:
     """Processes a single topic through the LLM and TTS pipeline."""
@@ -22,7 +24,7 @@ def process_single_topic(
         # LLM Generation Stage
         script: Script
         quality_scores: ScriptQualityScores
-        script, quality_scores = generator.generate(topic, prompt_template)
+        script, quality_scores = generator.generate(topic, prompt_template, few_shot_examples_nr=few_shot_nr, max_new_tokens=max_token_len)
 
         quality_scores = {'relevance_score': None, 'coherence_score': None}
         
@@ -64,11 +66,9 @@ def process_single_topic(
         if evaluate_audio_quality:
             LOGGER.info("Starting audio quality evaluation...")
             try:
-                analyzer = AudioQualityAnalyzer(
-                    audio_path=output_filename_full,
-                    transcript_md_path=script_filename_full,
-                )
-                audio_quality_results = analyzer.evaluate()
+                analyzer = AudioQualityAnalyzer()
+                audio_quality_results = analyzer.evaluate(audio_path=output_filename_full,
+                    transcript_md_path=script_filename_full)
                 audio_quality_scores = {
                     "wer": audio_quality_results["wer"],
                     "detailed_measures": audio_quality_results["detailed_measures"],
@@ -121,6 +121,9 @@ def run_podcast_pipeline(
     output_dir: str = "output", 
     hf_token: str | None = None, 
     tts_backend: str = "kokoro",
+    max_token_len: int = 256,
+    few_shot_nr: int = 3,
+    evaluate_script: bool = False,
     evaluate_audio: bool = False,
     ):
     """
@@ -178,6 +181,8 @@ def run_podcast_pipeline(
             output_dir, 
             generator, 
             adaptive_tts,
+            few_shot_nr=few_shot_nr,
+            max_token_len=max_token_len,
             evaluate_audio_quality=evaluate_audio
             )
 
@@ -233,6 +238,24 @@ if __name__ == "__main__":
         help="Which TTS backend to use for synthesis."
     )
     parser.add_argument(
+        "--max_token_len",
+        default=256,
+        type=int,
+        help="Max token length for script generation."
+    )
+    parser.add_argument(
+        "--few_shot_nr",
+        default=3,
+        type=int,
+        help="Number of few shot examples to format the prompt (max 10)"
+    )
+    parser.add_argument(
+        "--evaluate_script",
+        default=False,
+        type=bool,
+        help="Enable script quality evaluation (relevance, coherence and compliance scores 1-10)"
+    )
+    parser.add_argument(
         "--evaluate_audio",
         default=True,
         type=bool,
@@ -248,5 +271,8 @@ if __name__ == "__main__":
         args.output_dir, 
         args.hf_token, 
         args.tts_backend,
+        args.max_token_len,
+        args.few_shot_nr,
+        args.evaluate_script,
         args.evaluate_audio
         )
