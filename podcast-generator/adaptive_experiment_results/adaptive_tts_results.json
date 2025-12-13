@@ -1,0 +1,162 @@
+{
+  "timestamp": "2025-12-13T22:23:58.918054",
+  "tts_profiles": {
+    "kokoro": {
+      "name": "Kokoro",
+      "avg_service_time": 40.0
+    },
+    "piper": {
+      "name": "Piper",
+      "avg_service_time": 20.0
+    }
+  },
+  "config": {
+    "experiment": {
+      "name": "Adaptive TTS Queuing Analysis",
+      "duration_seconds": 1800,
+      "topics_file": "input/topics_batch1.txt",
+      "output_dir": "adaptive_experiment_results"
+    },
+    "queuing": {
+      "arrival_rates": [
+        0.015,
+        0.02,
+        0.025,
+        0.03,
+        0.035,
+        0.04,
+        0.045
+      ]
+    },
+    "pipeline": {
+      "prompt_template": "podcast_script_v1",
+      "tts_backend": "adaptive",
+      "t_max": 90.0,
+      "enable_audio_analysis": false
+    },
+    "llm": {
+      "model_id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "max_new_tokens": 200,
+      "temperature": 0.7
+    },
+    "logging": {
+      "level": "INFO",
+      "format": "%(asctime)s - %(levelname)s - %(message)s",
+      "file": "adaptive_experiment.log"
+    }
+  },
+  "results": [
+    {
+      "arrival_rate": 0.015,
+      "service_rate": 0.03083635093337623,
+      "avg_service_time": 32.42925864219666,
+      "avg_response_time": 55.87817151646933,
+      "avg_queue_length": 1.04,
+      "is_stable": true,
+      "total_requests": 25,
+      "completed_requests": 25,
+      "throughput_rpm": 1.8501810560025738,
+      "avg_llm_time": 5.171039361953735,
+      "tts_kokoro_usage": 68.0,
+      "tts_piper_usage": 32.0,
+      "tts_kokoro_count": 17,
+      "tts_piper_count": 8
+    },
+    {
+      "arrival_rate": 0.02,
+      "service_rate": 0.027994023628310688,
+      "avg_service_time": 35.72191026475694,
+      "avg_response_time": 49.531370605009336,
+      "avg_queue_length": 0.7407407407407407,
+      "is_stable": true,
+      "total_requests": 27,
+      "completed_requests": 27,
+      "throughput_rpm": 1.6796414176986412,
+      "avg_llm_time": 5.116332080629137,
+      "tts_kokoro_usage": 77.77777777777779,
+      "tts_piper_usage": 22.222222222222214,
+      "tts_kokoro_count": 21,
+      "tts_piper_count": 6
+    },
+    {
+      "arrival_rate": 0.025,
+      "service_rate": 0.03291037002196793,
+      "avg_service_time": 30.38555930341993,
+      "avg_response_time": 46.43304601929672,
+      "avg_queue_length": 1.5,
+      "is_stable": true,
+      "total_requests": 42,
+      "completed_requests": 42,
+      "throughput_rpm": 1.9746222013180756,
+      "avg_llm_time": 5.121848850023179,
+      "tts_kokoro_usage": 61.904761904761905,
+      "tts_piper_usage": 38.095238095238095,
+      "tts_kokoro_count": 26,
+      "tts_piper_count": 16
+    },
+    {
+      "arrival_rate": 0.03,
+      "service_rate": 0.03333795641618226,
+      "avg_service_time": 29.99583980242411,
+      "avg_response_time": 52.699596902837,
+      "avg_queue_length": 1.5333333333333334,
+      "is_stable": true,
+      "total_requests": 45,
+      "completed_requests": 45,
+      "throughput_rpm": 2.0002773849709357,
+      "avg_llm_time": 5.1030067708757185,
+      "tts_kokoro_usage": 60.0,
+      "tts_piper_usage": 40.0,
+      "tts_kokoro_count": 27,
+      "tts_piper_count": 18
+    },
+    {
+      "arrival_rate": 0.035,
+      "service_rate": 0.0379163513141457,
+      "avg_service_time": 26.373845724626023,
+      "avg_response_time": 50.28240771780365,
+      "avg_queue_length": 1.9454545454545455,
+      "is_stable": true,
+      "total_requests": 55,
+      "completed_requests": 55,
+      "throughput_rpm": 2.2749810788487426,
+      "avg_llm_time": 5.104824334924872,
+      "tts_kokoro_usage": 49.09090909090909,
+      "tts_piper_usage": 50.90909090909091,
+      "tts_kokoro_count": 27,
+      "tts_piper_count": 28
+    },
+    {
+      "arrival_rate": 0.04,
+      "service_rate": 0.042460826258402286,
+      "avg_service_time": 23.55111965825481,
+      "avg_response_time": 52.796920942213625,
+      "avg_queue_length": 2.903225806451613,
+      "is_stable": true,
+      "total_requests": 62,
+      "completed_requests": 62,
+      "throughput_rpm": 2.547649575504137,
+      "avg_llm_time": 5.103661060333252,
+      "tts_kokoro_usage": 40.32258064516129,
+      "tts_piper_usage": 59.67741935483871,
+      "tts_kokoro_count": 25,
+      "tts_piper_count": 37
+    },
+    {
+      "arrival_rate": 0.045,
+      "service_rate": 0.05429164203437298,
+      "avg_service_time": 18.41904135754234,
+      "avg_response_time": 55.509087688175576,
+      "avg_queue_length": 4.536842105263158,
+      "is_stable": true,
+      "total_requests": 95,
+      "completed_requests": 95,
+      "throughput_rpm": 3.2574985220623787,
+      "avg_llm_time": 5.098308093924271,
+      "tts_kokoro_usage": 24.210526315789473,
+      "tts_piper_usage": 75.78947368421052,
+      "tts_kokoro_count": 23,
+      "tts_piper_count": 72
+    }
+  ]
+}

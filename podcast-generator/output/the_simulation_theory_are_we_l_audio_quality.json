@@ -1,21 +1,21 @@
 {
-  "audio_path": "output/the_simulation_theory_are_we_l_HM_GM_tts_piper.wav",
+  "audio_path": "output/the_simulation_theory_are_we_l_HM_GM_tts_kokoro.wav",
   "transcript_path": "output/the_simulation_theory_are_we_l_script.md",
-  "wer": 0.023121387283236993,
+  "wer": 0.005813953488372093,
   "detailed_measures": {
-    "hits": 169,
-    "substitutions": 2,
-    "deletions": 2,
+    "hits": 171,
+    "substitutions": 1,
+    "deletions": 0,
     "insertions": 0
   },
   "audio_metrics": {
     "sample_rate": 16000,
-    "duration_s": 77.148375,
-    "clipping_pct": 0.0003240508954336368,
-    "rms_dbfs": -17.297910163194512,
-    "spectral_flatness": 0.032334644347429276,
-    "voice_activity_ratio": 0.9655728328691304
+    "duration_s": 72.768,
+    "clipping_pct": 8.588940193491645e-05,
+    "rms_dbfs": -24.085170929215323,
+    "spectral_flatness": 0.03851718455553055,
+    "voice_activity_ratio": 0.8883025505716798
   },
-  "hypothesis_raw_preview": "Welcome to the Adaptive AI Podcast, where we explore the latest advancements in artificial intelligence and their impact on our world. I'm your host, Max Wellington. Today, we're going to dive into one of the most mind-bending ideas in philosophy, the simulation theory. Joining me is Dr. Elliot Thompson, a renowned expert in the field of theoretical physics and philosophy of science. great to be on the show. Dr. Thompson, thanks for taking the time to join us today. So, to start, can you explain the simulation theory in simple terms? Is it the idea that we're living in a vidivo game created by a more advanced civilization? That's right, Max. The simulation theory suggests that our reality might be a simulation created by a high-level entity, perhaps a civilization with capabilities. beyond our own. This idea is based on the notion that our universe is too complex and fine-tuned to be a mere coincidence. It's possible that our reality is a simulation, a computer-generated world designed",
-  "reference_preview": "Welcome to the Adaptive AI Podcast, where we explore the latest advancements in artificial intelligence and their impact on our world. I'm your host, Max Wellington. Today, we're going to dive into one of the most mind-bending ideas in philosophy: the Simulation Theory. Joining me is Dr. Elliot Thompson, a renowned expert in the field of theoretical physics and philosophy of science. Hi Max, great to be on the show. Dr. Thompson, thanks for taking the time to join us today. So, to start, can you explain the Simulation Theory in simple terms? Is it the idea that we're living in a video game created by a more advanced civilization? That's right, Max. The Simulation Theory suggests that our reality might be a simulation created by a higher-level entity, perhaps a civilization with capabilities beyond our own. This idea is based on the notion that our universe is too complex and fine-tuned to be a mere coincidence. It's possible that our reality is a simulation, a computer-generated world "
+  "hypothesis_raw_preview": "Imagine you're a character in your favorite video game, with every moment of your life predetermined by a higher power. Sounds like science fiction, but what if this was reality? Welcome to the Adaptive AI podcast, where we explore the intersection of technology and human experience. I'm your host, Ryan Thompson. Today, we have Dr. Elijah Everett, a philosopher specializing in the nature of reality, joining us to discuss the simulation theory. Thanks for having me, Ryan. It's a pleasure to explore this mind-bending idea with you. Elijah, what is the simulation theory? And why do some people believe it's true? The theory proposes that our reality is a simulation created by a more advanced civilization. Some argue that the sheer complexity and precision of our world suggests it's too perfect to be real. Additionally, the rapid progress in computer technology and AI raises the possibility that a civilization could create such a simulation. It's a thought-provoking idea that challenges our",
+  "reference_preview": "Imagine you’re a character in your favorite video game, with every moment of your life predetermined by a higher power. Sounds like science fiction, but what if this was reality? Welcome to the Adaptive AI Podcast, where we explore the intersection of technology and human experience. I’m your host, Ryan Thompson. Today, we have Dr. Elijah Everett, a philosopher specializing in the nature of reality, joining us to discuss the Simulation Theory. Thanks for having me, Ryan. It’s a pleasure to explore this mind-bending idea with you. Elijah, what is the Simulation Theory, and why do some people believe it’s true? The theory proposes that our reality is a simulation created by a more advanced civilization. Some argue that the sheer complexity and precision of our world suggest it’s too perfect to be real. Additionally, the rapid progress in computer technology and AI raises the possibility that a civilization could create such a simulation. It’s a thought-provoking idea that challenges our "
 }

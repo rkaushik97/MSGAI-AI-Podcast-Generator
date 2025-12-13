@@ -1,0 +1,27 @@
+# config.yaml
+experiment:
+  name: "Adaptive TTS Queuing Analysis"
+  duration_seconds: 1800  # 30 minutes per experiment (shorter for adaptive)
+  topics_file: "input/topics_batch1.txt"
+  output_dir: "adaptive_experiment_results"
+  
+queuing:
+  # Test around the critical thresholds:
+  # λ < µ_kokoro (0.025), λ ≈ µ_kokoro, λ > µ_kokoro but < µ_piper (0.05)
+  arrival_rates: [0.015, 0.020, 0.025, 0.030, 0.035, 0.040, 0.045]
+  
+pipeline:
+  prompt_template: "podcast_script_v1"
+  tts_backend: "adaptive"  # New mode!
+  t_max: 90.0  # QoS constraint in seconds
+  enable_audio_analysis: false
+  
+llm:
+  model_id: "meta-llama/Meta-Llama-3.1-8B-Instruct"
+  max_new_tokens: 200
+  temperature: 0.7
+  
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+  file: "adaptive_experiment.log"

@@ -4,374 +4,374 @@
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_simulation_theory_are_we_l_script.md",
-        "audio_file": "the_simulation_theory_are_we_l_HM_GM_tts_kokoro.wav",
-        "host_gender": "MALE",
+        "audio_file": "the_simulation_theory_are_we_l_HF_GM_tts_piper.wav",
+        "host_gender": "FEMALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 7.318326473236084,
-            "tts_synthesis_time": 38.29458689689636
+            "llm_generation_time": 7.927489757537842,
+            "tts_synthesis_time": 10.245489597320557
         },
-        "processing_time_sec": 45.61
+        "processing_time_sec": 18.17
     },
     {
         "topic": "De-extinction: bringing the Woolly Mammoth back",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "de-extinction_bringing_the_woo_script.md",
-        "audio_file": "de-extinction_bringing_the_woo_HM_GF_tts_kokoro.wav",
+        "audio_file": "de-extinction_bringing_the_woo_HM_GF_tts_piper.wav",
         "host_gender": "MALE",
         "guest_gender": "FEMALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.4348978996276855,
-            "tts_synthesis_time": 33.98109459877014
+            "llm_generation_time": 5.437704801559448,
+            "tts_synthesis_time": 5.491680860519409
         },
-        "processing_time_sec": 39.42
+        "processing_time_sec": 10.93
     },
     {
         "topic": "The psychology behind why we believe conspiracy theories",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_psychology_behind_why_we_b_script.md",
-        "audio_file": "the_psychology_behind_why_we_b_HM_GM_tts_kokoro.wav",
+        "audio_file": "the_psychology_behind_why_we_b_HM_GF_tts_piper.wav",
         "host_gender": "MALE",
-        "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "guest_gender": "FEMALE",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.45557427406311,
-            "tts_synthesis_time": 40.635942697525024
+            "llm_generation_time": 5.443958282470703,
+            "tts_synthesis_time": 6.101893424987793
         },
-        "processing_time_sec": 46.09
+        "processing_time_sec": 11.55
     },
     {
         "topic": "Modern urban legends and their origins",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "modern_urban_legends_and_their_script.md",
-        "audio_file": "modern_urban_legends_and_their_HM_GM_tts_kokoro.wav",
-        "host_gender": "MALE",
+        "audio_file": "modern_urban_legends_and_their_HF_GM_tts_piper.wav",
+        "host_gender": "FEMALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.439385652542114,
-            "tts_synthesis_time": 37.47040605545044
+            "llm_generation_time": 5.4313178062438965,
+            "tts_synthesis_time": 5.335419416427612
         },
-        "processing_time_sec": 42.91
+        "processing_time_sec": 10.77
     },
     {
         "topic": "The future of commercial space tourism",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_future_of_commercial_space_script.md",
-        "audio_file": "the_future_of_commercial_space_HM_GM_tts_kokoro.wav",
+        "audio_file": "the_future_of_commercial_space_HM_GM_tts_piper.wav",
         "host_gender": "MALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.434688091278076,
-            "tts_synthesis_time": 40.30003046989441
+            "llm_generation_time": 5.431419610977173,
+            "tts_synthesis_time": 6.06821084022522
         },
-        "processing_time_sec": 45.73
+        "processing_time_sec": 11.5
     },
     {
         "topic": "The enduring mystery of the Bermuda Triangle",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_enduring_mystery_of_the_be_script.md",
-        "audio_file": "the_enduring_mystery_of_the_be_HM_GM_tts_kokoro.wav",
-        "host_gender": "MALE",
+        "audio_file": "the_enduring_mystery_of_the_be_HF_GM_tts_piper.wav",
+        "host_gender": "FEMALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.433875799179077,
-            "tts_synthesis_time": 38.934760093688965
+            "llm_generation_time": 5.437365531921387,
+            "tts_synthesis_time": 5.749640226364136
         },
-        "processing_time_sec": 44.37
+        "processing_time_sec": 11.19
     },
     {
         "topic": "Artificial General Intelligence vs. Human Intuition",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "artificial_general_intelligenc_script.md",
-        "audio_file": "artificial_general_intelligenc_HF_GM_tts_kokoro.wav",
-        "host_gender": "FEMALE",
-        "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "audio_file": "artificial_general_intelligenc_HM_GF_tts_piper.wav",
+        "host_gender": "MALE",
+        "guest_gender": "FEMALE",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.437420606613159,
-            "tts_synthesis_time": 40.23552203178406
+            "llm_generation_time": 5.435611724853516,
+            "tts_synthesis_time": 6.327608108520508
         },
-        "processing_time_sec": 45.67
+        "processing_time_sec": 11.76
     },
     {
         "topic": "The history of unbreakable codes and ciphers",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_history_of_unbreakable_cod_script.md",
-        "audio_file": "the_history_of_unbreakable_cod_HF_GM_tts_kokoro.wav",
-        "host_gender": "FEMALE",
+        "audio_file": "the_history_of_unbreakable_cod_HM_GM_tts_piper.wav",
+        "host_gender": "MALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.44089937210083,
-            "tts_synthesis_time": 36.00391340255737
+            "llm_generation_time": 5.440402507781982,
+            "tts_synthesis_time": 5.745509624481201
         },
-        "processing_time_sec": 41.44
+        "processing_time_sec": 11.19
     },
     {
         "topic": "Biohacking and the ethics of human augmentation",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "biohacking_and_the_ethics_of_h_script.md",
-        "audio_file": "biohacking_and_the_ethics_of_h_HM_GM_tts_kokoro.wav",
-        "host_gender": "MALE",
+        "audio_file": "biohacking_and_the_ethics_of_h_HF_GM_tts_piper.wav",
+        "host_gender": "FEMALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.437601089477539,
-            "tts_synthesis_time": 39.703853368759155
+            "llm_generation_time": 5.434606313705444,
+            "tts_synthesis_time": 5.682279109954834
         },
-        "processing_time_sec": 45.14
+        "processing_time_sec": 11.12
     },
     {
         "topic": "The cultural impact of finding alien life",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_cultural_impact_of_finding_script.md",
-        "audio_file": "the_cultural_impact_of_finding_HM_GF_tts_kokoro.wav",
+        "audio_file": "the_cultural_impact_of_finding_HM_GM_tts_piper.wav",
         "host_gender": "MALE",
-        "guest_gender": "FEMALE",
-        "tts_backend": "kokoro",
+        "guest_gender": "MALE",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.435744285583496,
-            "tts_synthesis_time": 40.70856523513794
+            "llm_generation_time": 5.437963485717773,
+            "tts_synthesis_time": 6.247790336608887
         },
-        "processing_time_sec": 46.14
+        "processing_time_sec": 11.69
     },
     {
         "topic": "Deep sea exploration: What is really down there?",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "deep_sea_exploration_what_is_r_script.md",
-        "audio_file": "deep_sea_exploration_what_is_r_HM_GM_tts_kokoro.wav",
-        "host_gender": "MALE",
+        "audio_file": "deep_sea_exploration_what_is_r_HF_GM_tts_piper.wav",
+        "host_gender": "FEMALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.43772554397583,
-            "tts_synthesis_time": 36.942540645599365
+            "llm_generation_time": 5.440386772155762,
+            "tts_synthesis_time": 5.408146619796753
         },
-        "processing_time_sec": 42.38
+        "processing_time_sec": 10.85
     },
     {
         "topic": "The theoretical physics of time travel",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_theoretical_physics_of_tim_script.md",
-        "audio_file": "the_theoretical_physics_of_tim_HM_GM_tts_kokoro.wav",
+        "audio_file": "the_theoretical_physics_of_tim_HM_GM_tts_piper.wav",
         "host_gender": "MALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.436855316162109,
-            "tts_synthesis_time": 40.95779490470886
+            "llm_generation_time": 5.437645196914673,
+            "tts_synthesis_time": 6.366625785827637
         },
-        "processing_time_sec": 46.39
+        "processing_time_sec": 11.8
     },
     {
         "topic": "Minimalist living in a hyper-consumerist world",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "minimalist_living_in_a_hyper-c_script.md",
-        "audio_file": "minimalist_living_in_a_hyper-c_HM_GF_tts_kokoro.wav",
-        "host_gender": "MALE",
-        "guest_gender": "FEMALE",
-        "tts_backend": "kokoro",
+        "audio_file": "minimalist_living_in_a_hyper-c_HF_GM_tts_piper.wav",
+        "host_gender": "FEMALE",
+        "guest_gender": "MALE",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.435806751251221,
-            "tts_synthesis_time": 37.730156660079956
+            "llm_generation_time": 5.438874244689941,
+            "tts_synthesis_time": 5.2760162353515625
         },
-        "processing_time_sec": 43.17
+        "processing_time_sec": 10.71
     },
     {
         "topic": "The Mandela Effect and collective false memories",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_mandela_effect_and_collect_script.md",
-        "audio_file": "the_mandela_effect_and_collect_HF_GM_tts_kokoro.wav",
-        "host_gender": "FEMALE",
-        "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "audio_file": "the_mandela_effect_and_collect_HM_GF_tts_piper.wav",
+        "host_gender": "MALE",
+        "guest_gender": "FEMALE",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.4372007846832275,
-            "tts_synthesis_time": 37.07794499397278
+            "llm_generation_time": 5.435282468795776,
+            "tts_synthesis_time": 5.373074054718018
         },
-        "processing_time_sec": 42.52
+        "processing_time_sec": 10.81
     },
     {
         "topic": "The search for the Lost City of Atlantis",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_search_for_the_lost_city_o_script.md",
-        "audio_file": "the_search_for_the_lost_city_o_HM_GF_tts_kokoro.wav",
-        "host_gender": "MALE",
-        "guest_gender": "FEMALE",
-        "tts_backend": "kokoro",
+        "audio_file": "the_search_for_the_lost_city_o_HF_GM_tts_piper.wav",
+        "host_gender": "FEMALE",
+        "guest_gender": "MALE",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.436301231384277,
-            "tts_synthesis_time": 39.516223669052124
+            "llm_generation_time": 5.43505072593689,
+            "tts_synthesis_time": 5.432117938995361
         },
-        "processing_time_sec": 44.95
+        "processing_time_sec": 10.87
     },
     {
         "topic": "The science and mystery of lucid dreaming",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_science_and_mystery_of_luc_script.md",
-        "audio_file": "the_science_and_mystery_of_luc_HM_GF_tts_kokoro.wav",
+        "audio_file": "the_science_and_mystery_of_luc_HM_GM_tts_piper.wav",
         "host_gender": "MALE",
-        "guest_gender": "FEMALE",
-        "tts_backend": "kokoro",
+        "guest_gender": "MALE",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.438702583312988,
-            "tts_synthesis_time": 36.02580904960632
+            "llm_generation_time": 5.43958306312561,
+            "tts_synthesis_time": 5.835655689239502
         },
-        "processing_time_sec": 41.46
+        "processing_time_sec": 11.28
     },
     {
         "topic": "The future of lab-grown meat and sustainable food",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_future_of_lab-grown_meat_a_script.md",
-        "audio_file": "the_future_of_lab-grown_meat_a_HM_GM_tts_kokoro.wav",
-        "host_gender": "MALE",
+        "audio_file": "the_future_of_lab-grown_meat_a_HF_GM_tts_piper.wav",
+        "host_gender": "FEMALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.430901765823364,
-            "tts_synthesis_time": 38.53668546676636
+            "llm_generation_time": 5.4341559410095215,
+            "tts_synthesis_time": 5.715623140335083
         },
-        "processing_time_sec": 43.97
+        "processing_time_sec": 11.15
     },
     {
         "topic": "Cryptozoology: The hunt for Bigfoot and Nessie",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "cryptozoology_the_hunt_for_big_script.md",
-        "audio_file": "cryptozoology_the_hunt_for_big_HM_GM_tts_kokoro.wav",
+        "audio_file": "cryptozoology_the_hunt_for_big_HM_GM_tts_piper.wav",
         "host_gender": "MALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.441396951675415,
-            "tts_synthesis_time": 34.32087421417236
+            "llm_generation_time": 5.438748359680176,
+            "tts_synthesis_time": 5.911499738693237
         },
-        "processing_time_sec": 39.76
+        "processing_time_sec": 11.35
     },
     {
         "topic": "The Voynich Manuscript: A book no one can read",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_voynich_manuscript_a_book__script.md",
-        "audio_file": "the_voynich_manuscript_a_book__HM_GM_tts_kokoro.wav",
+        "audio_file": "the_voynich_manuscript_a_book__HM_GF_tts_piper.wav",
         "host_gender": "MALE",
-        "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "guest_gender": "FEMALE",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.440558671951294,
-            "tts_synthesis_time": 36.77998971939087
+            "llm_generation_time": 5.442099571228027,
+            "tts_synthesis_time": 5.056796073913574
         },
-        "processing_time_sec": 42.22
+        "processing_time_sec": 10.5
     },
     {
         "topic": "Psychological tricks used in modern advertising",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "psychological_tricks_used_in_m_script.md",
-        "audio_file": "psychological_tricks_used_in_m_HM_GF_tts_kokoro.wav",
+        "audio_file": "psychological_tricks_used_in_m_HM_GF_tts_piper.wav",
         "host_gender": "MALE",
         "guest_gender": "FEMALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.436122894287109,
-            "tts_synthesis_time": 36.36670231819153
+            "llm_generation_time": 5.436240911483765,
+            "tts_synthesis_time": 6.0237414836883545
         },
-        "processing_time_sec": 41.8
+        "processing_time_sec": 11.46
     },
     {
         "topic": "The history and culture of video game speedrunning",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_history_and_culture_of_vid_script.md",
-        "audio_file": "the_history_and_culture_of_vid_HM_GM_tts_kokoro.wav",
+        "audio_file": "the_history_and_culture_of_vid_HM_GM_tts_piper.wav",
         "host_gender": "MALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.437399864196777,
-            "tts_synthesis_time": 36.79847431182861
+            "llm_generation_time": 5.440797805786133,
+            "tts_synthesis_time": 5.423539400100708
         },
-        "processing_time_sec": 42.24
+        "processing_time_sec": 10.86
     },
     {
         "topic": "How different languages shape our perception of reality",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "how_different_languages_shape__script.md",
-        "audio_file": "how_different_languages_shape__HF_GM_tts_kokoro.wav",
+        "audio_file": "how_different_languages_shape__HF_GM_tts_piper.wav",
         "host_gender": "FEMALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.436997413635254,
-            "tts_synthesis_time": 38.90296769142151
+            "llm_generation_time": 5.438946723937988,
+            "tts_synthesis_time": 5.968339920043945
         },
-        "processing_time_sec": 44.34
+        "processing_time_sec": 11.41
     },
     {
         "topic": "The rise of digital nomads and van life",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_rise_of_digital_nomads_and_script.md",
-        "audio_file": "the_rise_of_digital_nomads_and_HF_GM_tts_kokoro.wav",
+        "audio_file": "the_rise_of_digital_nomads_and_HF_GM_tts_piper.wav",
         "host_gender": "FEMALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.437987804412842,
-            "tts_synthesis_time": 35.761972188949585
+            "llm_generation_time": 5.43732476234436,
+            "tts_synthesis_time": 5.246459007263184
         },
-        "processing_time_sec": 41.2
+        "processing_time_sec": 10.68
     },
     {
         "topic": "The Singularity: When machines become smarter than us",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "the_singularity_when_machines__script.md",
-        "audio_file": "the_singularity_when_machines__HM_GM_tts_kokoro.wav",
+        "audio_file": "the_singularity_when_machines__HM_GM_tts_piper.wav",
         "host_gender": "MALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.4339141845703125,
-            "tts_synthesis_time": 38.61717677116394
+            "llm_generation_time": 5.434096097946167,
+            "tts_synthesis_time": 6.497806549072266
         },
-        "processing_time_sec": 44.05
+        "processing_time_sec": 11.93
     },
     {
         "topic": "Investigating the reality of paranormal activity",
         "relevance_score": null,
         "coherence_score": null,
         "script_file": "investigating_the_reality_of_p_script.md",
-        "audio_file": "investigating_the_reality_of_p_HM_GM_tts_kokoro.wav",
-        "host_gender": "MALE",
+        "audio_file": "investigating_the_reality_of_p_HF_GM_tts_piper.wav",
+        "host_gender": "FEMALE",
         "guest_gender": "MALE",
-        "tts_backend": "kokoro",
+        "tts_backend": "piper",
         "timing_data": {
-            "llm_generation_time": 5.438469171524048,
-            "tts_synthesis_time": 38.27657341957092
+            "llm_generation_time": 5.436518907546997,
+            "tts_synthesis_time": 5.380759954452515
         },
-        "processing_time_sec": 43.72
+        "processing_time_sec": 10.82
     }
 ]
