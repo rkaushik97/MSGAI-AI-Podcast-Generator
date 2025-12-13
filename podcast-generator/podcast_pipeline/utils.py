@@ -34,7 +34,7 @@ class ModelConstants:
     PIPER_FEMALE_MODEL = "en/en_US/amy/medium/en_US-amy-medium.onnx"
     PIPER_FEMALE_CONFIG = "en/en_US/amy/medium/en_US-amy-medium.onnx.json"
     # kokoro settings
-    KOKORO_MODEL_PATH = "../kokoro/kokoro-v1.0.onnx"
+    KOKORO_MODEL_PATH = "../kokoro/kokoro-v1.0.fp16.onnx" # "../kokoro/kokoro-v1.0.onnx"
     KOKORO_VOICES_PATH = "../kokoro/voices-v1.0.bin"
     KOKORO_MALE_VOICE = "am_michael"
     KOKORO_FEMALE_VOICE = "af_sarah"
